@@ -1,0 +1,246 @@
+.product {
+}
+.head {
+}
+.product__head {
+}
+.back-btn {
+}
+.feature-btn {
+}
+.favorite-icon {
+}
+.favorite-icon-path {
+}
+.product__main {
+}
+.product__img-container {
+}
+.product__info {
+}
+.title {
+}
+.product__title {
+}
+.product__buy-wrapper {
+}
+.product__button {
+}
+.product__price {
+}
+.product__additionally {
+}
+.product__counter {
+}
+.product__minus {
+}
+.counter-btn {
+}
+.product__plus {
+}
+.product__radio {
+}
+.product__radio-item {
+}
+.product__radio-input {
+}
+.product__descr {
+}
+.compound {
+}
+.subtitle {
+}
+.compound__subtitle {
+}
+.compound__wrapper {
+}
+.compound__prev {
+}
+.slider {
+}
+.compound__slider {
+}
+.compound__item {
+}
+.compound__next {
+}
+.recomend {
+}
+.product__subtitle {
+}
+.recomend__wrapper {
+}
+.recomend__prev {
+}
+.recomend__slider {
+}
+.recomend__item {
+}
+.recomend__top {
+}
+.recomend__middle {
+}
+.recomend__name {
+}
+.recomend__desc {
+}
+.recomend__bottom {
+}
+.recomend__price {
+}
+.add-cart__btn {
+}
+.recomend__next {
+}
+
+.product {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    transform: translateX(-100%);
+    background: $second-bg;
+    width: 100vw;
+    height: fit-content;
+    transition: all .5s;
+    padding: 50px 0 0;
+    box-sizing: border-box;
+}
+.product_show {
+    transform: translateX(0%);
+    overflow: hidden;
+}
+.product__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 5px;
+}
+
+
+
+.product__main {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-content: space-between;
+    
+}
+.product__img-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+        width: 75%;
+    }
+}
+
+.product__info {
+    .product__title {
+        margin-bottom: 20px;
+    }
+    .product__buy-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+
+        .product__button {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: $accent;
+            color: $second-bg;
+            padding: 10px 15px;
+            border-radius: 10px;
+            width: 60%;
+            div {
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                
+                span {
+                    font-size: 16px;
+                    margin-bottom: 5px;
+                }
+                .product__button-price {
+                    font-size: 18px;
+                }
+            }
+        }
+
+        .product__additionally {
+            .product__counter {
+                display: flex;
+                align-items: center;
+
+                .counter-btn {
+                    padding: 0;
+                    background: transparent;
+                }
+                span {
+                    font-size: 24px;
+                    font-weight: 500;
+                    margin: 0px 10px;
+                }
+            }
+            .product__radio {
+
+            }
+        }
+    }
+    .product__descr {
+        font-size: 16px;
+        font-weight: 500;
+    }
+    .slider__wrapper {
+    
+        .compound__item {
+            display: flex;
+            width: 8rem !important;
+            padding: 0 5px;
+            box-sizing: border-box;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        
+            img {
+                width: 100%;
+            }
+            span {
+                margin: 5px auto 0;
+                text-align: center;
+            }
+        }
+    }
+}
+.slider__wrapper {
+
+
+    .recomend__item {
+
+        .recomend__card {
+            background: $second-bg;
+            width: max-content;
+            margin: 0 auto;
+            .card__top {
+                height: 8rem;
+                pointer-events: none;
+                display: flex;
+                justify-content: space-between;
+                img {
+                    width: calc(100% - 32px);
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+

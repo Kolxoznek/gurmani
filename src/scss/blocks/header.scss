@@ -1,0 +1,125 @@
+@import '../variables';
+
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .6rem 0;
+    
+    .logo {
+        display: flex;
+        align-items: center;
+        img {
+            width: 2.5rem;
+            margin-right: .3rem;
+        }
+        span {
+            font-family: Antonio;
+            font-size: 2.4rem;
+            line-height: 100%;
+        }
+    }
+
+    .tagline {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        span {
+            font-weight: 700;
+            font-size: .9rem;
+        }
+    }
+    
+    .work-time {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-weight: 700;
+    }
+
+    .navbar {
+        display: flex;
+
+        .navbar__item {
+            text-decoration: none;
+            padding: 6px 10px;
+            svg {
+                pointer-events: none;
+            }
+            span {
+                display: none;
+            }
+        }
+
+        .navbar__item.nav-active {
+            background: $accent;
+            display: flex;
+            align-items: center;
+            border-radius: 10px;
+            svg {
+                path {
+                    fill: $second-bg;
+                    stroke: $second-bg;
+                }
+            }
+            span {
+                display: block;
+                color: $second-bg;
+                margin-left: 5px;
+            }
+
+        }
+        
+        
+        
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        .tagline {
+            display: none;
+        }
+    }
+    
+}
+@media (max-width: 480px) {
+    header {
+
+        .logo__wrapper {
+            img {
+                width: 30px;
+                height: 30px;
+            }
+            span {
+                font-size: 24px;
+            }
+        }
+
+        .work-time {
+            span {
+                font-size: 12px;
+            }
+        }
+
+        .header__nav {
+            .nav-item:first-child {
+                background: $accent;
+                display: flex;
+                align-items: center;
+                border-radius: 10px;
+                span {
+                    display: none;
+                }
+    
+            }
+            .nav-item:nth-child(3), .nav-item:nth-child(4) {
+                display: none;
+            }
+        }
+    }
+    
+}

@@ -1,0 +1,35 @@
+{
+    "components": [
+        {
+        "name":"Рис",
+        "img":"/public/images/..."
+        },
+        {
+        "name":"Солями",
+        "img":"/public/images/..."
+        },
+        {
+        "name":"Сыр",
+        "img":"/public/images/..."
+        },
+        {
+        "name":"Томатная паста",
+        "img":"/public/images/..."
+        }
+    ],
+    "menu": {
+        "pizza": [
+            {
+                "name": "Пеперони",
+                "img": "/public/images/(4Ñ_ÐµÐ·Ð¾Ð½Ð°)890Ñ_748.png",
+                "price": 450
+            }
+        ],
+        "sushi": [
+            {
+                "name": "Филадельфия",
+                "price": 900
+            }
+        ]
+    }
+}

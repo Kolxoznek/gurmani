@@ -1,0 +1,66 @@
+@import 'normalize.css';
+@import 'fonts.scss';
+
+@import 'variables.scss';
+@import 'blocks/header.scss';
+@import 'blocks/sliders.scss';
+@import 'blocks/category.scss';
+@import 'blocks/footer.scss';
+@import 'blocks/popular.scss';
+@import 'blocks/card.scss';
+@import 'blocks/product-modal.scss';
+@import 'blocks/btns.scss';
+
+
+html {
+    position: relative;
+    font-family: Roboto;
+    font-size: 16px;
+    color: $dark-text;
+    background: $main-bg;
+    height: 100%;
+    padding: 0 .6rem;
+    
+}
+a {
+    text-decoration: none;
+    color: $dark-text;
+}
+button {
+    border: none;
+}
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 10px;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.logo {
+    font-family: Antonio;
+}
+
+.title {
+    font-size: 48px;
+    font-weight: 700;
+}
+.subtitle {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.hide {
+    display: none;
+    
+}
+
+@keyframes hide {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+    
+}

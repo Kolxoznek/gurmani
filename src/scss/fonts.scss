@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'Antonio'; /* Задайте имя вашего шрифта */
+    src: url('/fonts/AnyConv.com__Antonio-ExtraLight.woff2') format('woff2'), /* Путь к файлу WOFF2 */
+         url('/fonts/AnyConv.com__Antonio-ExtraLight.woff') format('woff'); /* Путь к файлу WOFF */
+    font-weight: 200; /* Укажите жирность шрифта */
+    font-style: normal; /* Укажите стиль шрифта */
+}
+@font-face {
+    font-family: 'Roboto'; /* Задайте имя вашего шрифта */
+    src: url('/fonts/AnyConv.com__Roboto-Regular.woff2') format('woff2'), /* Путь к файлу WOFF2 */
+         url('/fonts/AnyConv.com__Roboto-Regular.woff') format('woff'); /* Путь к файлу WOFF */
+    font-weight: 400; /* Укажите жирность шрифта */
+    font-style: normal; /* Укажите стиль шрифта */
+}
+@font-face {
+    font-family: 'Roboto'; /* Задайте имя вашего шрифта */
+    src: url('/fonts/AnyConv.com__Roboto-Medium.woff2') format('woff2'), /* Путь к файлу WOFF2 */
+         url('/fonts/AnyConv.com__Roboto-Medium.woff') format('woff'); /* Путь к файлу WOFF */
+    font-weight: 500; /* Укажите жирность шрифта */
+    font-style: normal; /* Укажите стиль шрифта */
+}
+@font-face {
+    font-family: 'Roboto'; /* Задайте имя вашего шрифта */
+    src: url('/fonts/AnyConv.com__Roboto-Bold.woff2') format('woff2'), /* Путь к файлу WOFF2 */
+         url('/fonts/AnyConv.com__Roboto-Bold.woff') format('woff'); /* Путь к файлу WOFF */
+    font-weight: 700; /* Укажите жирность шрифта */
+    font-style: normal; /* Укажите стиль шрифта */
+}
+@font-face {
+    font-family: 'Roboto'; /* Задайте имя вашего шрифта */
+    src: url('/fonts/AnyConv.com__Roboto-Black.woff2') format('woff2'), /* Путь к файлу WOFF2 */
+         url('/fonts/AnyConv.com__Roboto-Black.woff') format('woff'); /* Путь к файлу WOFF */
+    font-weight: 900; /* Укажите жирность шрифта */
+    font-style: normal; /* Укажите стиль шрифта */
+}

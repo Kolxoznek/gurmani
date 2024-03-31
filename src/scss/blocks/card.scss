@@ -1,0 +1,48 @@
+.card {
+    width: 11rem;
+    padding: 10px;
+    background: $hover-color;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+}
+
+.card__top {
+    height: 8rem;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    img {
+        height: 100%;
+    }
+}
+.card__middle {
+    pointer-events: none;
+
+    .card__name {
+        pointer-events: none;
+        margin-bottom: 5px;
+        font-size: 1rem;
+    }
+
+    .card__desc {
+        pointer-events: none;
+        color: $grey-text;
+        font-size: .8rem;
+    }
+}
+
+.card__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    .card__price {
+        pointer-events: none;
+    }
+    .add-cart__btn {
+        pointer-events: none;
+        display: flex;
+        align-items: end;
+    }
+}

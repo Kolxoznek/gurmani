@@ -1,0 +1,34 @@
+.category {
+    padding-bottom: 50px;
+}
+
+.category__slider {
+    
+}
+.category__slider-item {
+    width: fit-content;
+}
+.category__slide {
+    max-width: 100%;
+    min-height: 8rem;
+    box-sizing: border-box;
+    background: $card-bg;
+    
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        max-width: 6rem;
+        max-height: 6rem;
+    }
+
+    span {
+        font-weight: 500;
+    }
+
+    
+}
+
