@@ -19,7 +19,6 @@ html {
     color: $dark-text;
     background: $main-bg;
     height: 100%;
-    padding: 0 .6rem;
     
 }
 a {
@@ -48,11 +47,21 @@ button {
 .subtitle {
     font-size: 24px;
     font-weight: 700;
+    margin: 0;
+}
+
+.head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
 }
 
 .hide {
     display: none;
     
+}
+.overflow-hidden {
+    overflow: hidden;
 }
 
 @keyframes hide {

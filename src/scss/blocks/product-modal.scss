@@ -1,114 +1,20 @@
 .product {
-}
-.head {
-}
-.product__head {
-}
-.back-btn {
-}
-.feature-btn {
-}
-.favorite-icon {
-}
-.favorite-icon-path {
-}
-.product__main {
-}
-.product__img-container {
-}
-.product__info {
-}
-.title {
-}
-.product__title {
-}
-.product__buy-wrapper {
-}
-.product__button {
-}
-.product__price {
-}
-.product__additionally {
-}
-.product__counter {
-}
-.product__minus {
-}
-.counter-btn {
-}
-.product__plus {
-}
-.product__radio {
-}
-.product__radio-item {
-}
-.product__radio-input {
-}
-.product__descr {
-}
-.compound {
-}
-.subtitle {
-}
-.compound__subtitle {
-}
-.compound__wrapper {
-}
-.compound__prev {
-}
-.slider {
-}
-.compound__slider {
-}
-.compound__item {
-}
-.compound__next {
-}
-.recomend {
-}
-.product__subtitle {
-}
-.recomend__wrapper {
-}
-.recomend__prev {
-}
-.recomend__slider {
-}
-.recomend__item {
-}
-.recomend__top {
-}
-.recomend__middle {
-}
-.recomend__name {
-}
-.recomend__desc {
-}
-.recomend__bottom {
-}
-.recomend__price {
-}
-.add-cart__btn {
-}
-.recomend__next {
-}
-
-.product {
-    position: absolute;
+    position: fixed;
     top: 0;
-    left: 0;
+    left: -110%;
     z-index: 10;
-    transform: translateX(-100%);
     background: $second-bg;
     width: 100vw;
     height: fit-content;
-    transition: all .5s;
+    transition: all .7s;
     padding: 50px 0 0;
     box-sizing: border-box;
 }
 .product_show {
+    transform: translateX(110%);
+}
+.product_hide {
     transform: translateX(0%);
-    overflow: hidden;
 }
 .product__head {
     display: flex;
@@ -213,27 +119,30 @@
         }
     }
 }
-.slider__wrapper {
-
-
-    .recomend__item {
-
-        .recomend__card {
-            background: $second-bg;
-            width: max-content;
-            margin: 0 auto;
-            .card__top {
-                height: 8rem;
-                pointer-events: none;
-                display: flex;
-                justify-content: space-between;
-                img {
-                    width: calc(100% - 32px);
+.recomend {
+    .slider__wrapper {
+        
+    
+        .recomend__item {
+    
+            .recomend__card {
+                background: $second-bg;
+                width: max-content;
+                margin: 0 auto;
+                .card__top {
+                    height: 8rem;
+                    pointer-events: none;
+                    display: flex;
+                    justify-content: space-between;
+                    img {
+                        width: calc(100% - 32px);
+                    }
                 }
             }
         }
     }
 }
+    
 
 
 

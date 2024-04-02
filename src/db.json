@@ -25,10 +25,48 @@
                 "price": 450
             }
         ],
-        "sushi": [
+        "sushi-sets": [
             {
-                "name": "Филадельфия",
-                "price": 900
+                "name": "Мини сет",
+                "card-descr": "24шт/600гр",
+                "descr": "",
+                "price": 810,
+                "img": "/public/images/Ð¼Ð¸Ð½Ð¸ 585Ñ_385.png"
+            },
+            {
+                "name": "Сет три цезаря",
+                "card-descr": "24шт/750гр",
+                "descr": "",
+                "price": 926,
+                "img": "/public/images/3 Ñ_ÐµÐ·Ð°Ñ_Ñ_ 585Ñ_385.png"
+            },
+            {
+                "name": "Сет для двоих",
+                "card-descr": "32шт/750гр",
+                "descr": "",
+                "price": 950,
+                "img": "/public/images/Ñ_ÐµÑ_ Ð´Ð»Ñ_ Ð´Ð²Ð¾Ð¸Ñ_ 585Ñ_385(1).png"
+            },
+            {
+                "name": "Филадельфия сет",
+                "card-descr": "24шт/750гр",
+                "descr": "",
+                "price": 1250,
+                "img": "/public/images/Ñ_Ð¸Ð»Ð° 585Ñ_385.png"
+            },
+            {
+                "name": "Запеченый сет",
+                "card-descr": "24шт/800гр",
+                "descr": "",
+                "price": 995,
+                "img": "/public/images/Ð·Ð°Ð¿ÐµÑ_ÐµÐ½Ñ_Ð¹ 585Ñ_385.png"
+            },
+            {
+                "name": "Сет вулкан мини",
+                "card-descr": "16шт/550гр",
+                "descr": "",
+                "price": 770,
+                "img": "/public/images/Ð²Ñ_Ð»ÐºÐ°Ð½ Ð¼Ð¸Ð½Ð¸ 585Ñ_385.png"
             }
         ]
     }

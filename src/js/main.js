@@ -1,83 +1,94 @@
 import '../scss/style.scss'
 import '../js/blocks/slider.js'
-//import '../js/blocks/product.js'
-console.log(1)
-/* import fs from 'fs'
-
-fs.readFile('src/db.json', 'utf8', (err, data) => {
-    if (err) {
-      console.error(err);
-      return;
-    }
-    console.log(JSON.parse(data));
-  }); */
-
-/* fetch('http://localhost:3000/menu')
-    .then(data => {
-        return data.json()
-    })
-    .then(data => {
-        createPopularCard(data.pizza[0].name, data.pizza[0].img, data.pizza[0].price)
-    }) */
-
-function createPopularCard(name, img, price) {
-    const container = document.querySelector('.popular__items')
-    const elem = document.createElement('article')
-    elem.classList.add("popular__item")
-    elem.innerHTML = `
-    <div class="popular__img"><img src=${img} alt=${name}></div>
-        <div class="popular__info">
-            <h3 class="popular__name">
-                ${name}
-            </h3>
-            <span class="popular__desc">
-                16шт/350гр
-            </span>
-            <div>
-                <span class="popular__price">
-                    ${price}
-                </span>
-                <a href="#" class="add-cart__btn">
-                    <svg data-v-37865217="" width="24" height="24" viewBox="0 0 24 24" fill="#ff6800" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.5 3.5C1.5 2.39543 2.39543 1.5 3.5 1.5H20.5C21.6046 1.5 22.5 2.39543 22.5 3.5V20.5C22.5 21.6046 21.6046 22.5 20.5 22.5H3.5C2.39543 22.5 1.5 21.6046 1.5 20.5V3.5Z" stroke="#FF6800" stroke-width="0" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 7.33331V16.6666" stroke="#2c2c2c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M7.33337 12H16.6667" stroke="#2c2c2c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                </a>
-            </div>
-        </div>
-    `
-    container.append(elem)
-}
+import '../js/blocks/product.js'
+import '../js/blocks/menu.js'
 
 
-
+// создаю обьект с элементами страниц
 const navbar = document.querySelector('.navbar')
-const main = document.getElementById('main')
-const cart = document.getElementById('cart')
-const favorite = document.getElementById('favorite')
-
-navbar.addEventListener('click', e => {
-    if(e.target.classList.contains('navbar__item')) {
-        const dataNav = e.target.getAttribute('data-nav')
-        const page = document.getElementById(dataNav)
-        
-        hideActiveTab()
-        e.target.classList.add('nav-active')
-        hidePages()
-        page.classList.toggle('hide')
-    }
+const category = document.querySelector('.category')
+const cardsContainers = document.querySelectorAll('[data-cards]')
+const product = document.querySelector('#product')
+const backBtns = document.querySelectorAll('.back-btn')
+const backBtnProduct = document.querySelector('.product__head .back-btn')
+const pages = {}
+document.querySelectorAll('[data-page]').forEach(page => {
+    pages[page.id] = page
+})
+const navItems = {}
+document.querySelectorAll('[data-nav]').forEach(navItem => {
+    navItems[navItem.getAttribute('data-nav')] = navItem
 })
 
 
-function hidePages() {
-    main.classList.add('hide')
-    cart.classList.add('hide')
-    favorite.classList.add('hide')
+// показать активную страницу и ее таб
+function showPageAndTab(page, tab) {
+    page.classList.remove('hide')
+    tab.classList.add('nav-active')
 }
+// скрыть все страницы
+function hidePages() {
+    Object.values(pages).forEach(page => {
+        page.classList.add('hide')
+    })
+}
+// скрыть все табы
 function hideActiveTab() {
-    const navItem = document.querySelectorAll('[data-nav]')
-    for(let item of navItem) {
-        item.classList.remove('nav-active')
-    }
+    Object.values(navItems).forEach(navItem => {
+        navItem.classList.remove('nav-active')
+    })
 }
 
+// кнопки назад на страницах
+backBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        hidePages()
+        hideActiveTab()
+
+        showPageAndTab(pages.main, navItems.main)
+     })
+})
+
+// навбар
+navbar.addEventListener('click', e => {
+    if(e.target.classList.contains('navbar__item')) { 
+        hideActiveTab()
+        hidePages()
+        
+        showPageAndTab(pages[e.target.getAttribute('data-nav')], e.target)
+    }
+})
+
+// открыть меню при клике на карточку категорий
+category.addEventListener('click', e => {
+    if (e.target.getAttribute('data-category')) {
+        hideActiveTab()
+        hidePages()
+
+        showPageAndTab(pages.menu, navbar.querySelector(`[data-nav="menu"]`))
+    }
+})
+
+// кнопка назад в попапе товара
+backBtnProduct.addEventListener('click', () => {
+    product.classList.add('product_hide')
+    product.classList.remove('product_show')
+    document.body.classList.remove('overflow-hidden')
+})
+
+// открыть попап товара
+cardsContainers.forEach(container => {
+    container.addEventListener('click', e => {
+        if(e.target.getAttribute('data-card')) {
+            product.classList.add('product_show')
+            product.classList.remove('product_hide')
+            
+            setTimeout(() => {
+                document.body.classList.add('overflow-hidden')
+            }, 600)
+        }
+    })
+})
 
 
 
