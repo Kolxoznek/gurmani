@@ -31,7 +31,7 @@
                 "card-descr": "24шт/600гр",
                 "descr": "",
                 "price": 810,
-                "img": "/public/images/Ð¼Ð¸Ð½Ð¸ 585Ñ_385.png"
+                "img": "./public/images/Ð¼Ð¸Ð½Ð¸ 585Ñ_385.png"
             },
             {
                 "name": "Сет три цезаря",

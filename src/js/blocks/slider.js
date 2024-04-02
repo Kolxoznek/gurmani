@@ -52,6 +52,32 @@ const sliderCategory = tns({
     }
   });
 
+const sliderMenu = tns({
+    container: '.menu__slider',
+    slideBy: 1,
+    autoplay: true,
+    autoplayHoverPause: false,
+    autoplayButtonOutput: false,
+    nav: false,
+    nextButton: '.menu__next',
+    prevButton: '.menu__prev',
+    responsive: {
+      1024: {
+        items: 7,
+      },
+      768: {
+        items: 5,
+      },
+      480: {
+        items: 4,
+        gutter: 10,
+      },
+      320: {
+        items: 3,
+      }
+    }
+  });
+
 const sliderDiscont = tns({
     container: '.discont__slider',
     slideBy: 1,
