@@ -47,10 +47,13 @@ function hideActiveTab() {
 // кнопки назад на страницах
 backBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-        hidePages()
-        hideActiveTab()
-
-        showPageAndTab(pages.main, navItems.main)
+        if(btn === backBtnProduct) {  
+        } else {
+            hidePages()
+            hideActiveTab()
+    
+            showPageAndTab(pages.main, navItems.main)
+        }
      })
 })
 
@@ -66,6 +69,7 @@ navbar.addEventListener('click', e => {
 
 // кнопка назад в попапе товара
 backBtnProduct.addEventListener('click', () => {
+    
     product.classList.add('product_hide')
     product.classList.remove('product_show')
     document.body.classList.remove('overflow-hidden')
@@ -102,17 +106,17 @@ categories.forEach(category => {
 })
 
 function renderCategoryCards(attr, container) {
-    fetch(`http://localhost:3000/menu/`)
+    fetch(`http://localhost:3000/${attr || ''}`)
         .then(data => {
             return data.json()
         })
         .then(data => {
             const containerItems = document.querySelector(`[data-cards=${container}]`)
             containerItems.innerHTML = ''
-            data[attr].forEach(card => {
+            data.forEach(card => {
                 const element = document.createElement('article')
                 element.classList.add('card')
-                console.log(card['img'])
+                element.setAttribute('data-card', '0005')
                 element.innerHTML += `
                     <div class="card__top">
                         <img src="${card['img']}" alt="">
@@ -139,6 +143,5 @@ function renderCategoryCards(attr, container) {
             })
         })
 }
-
 
 

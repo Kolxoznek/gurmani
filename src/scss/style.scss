@@ -34,6 +34,8 @@ button {
     padding: 0 10px;
     min-height: 100vh;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
 }
 
 .logo {
@@ -78,4 +80,7 @@ button {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
+}
+.favorite, .cart, .menu {
+    flex: 1;
 }
