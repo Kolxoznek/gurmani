@@ -1,0 +1,13 @@
+.product__counter {
+    display: flex;
+    align-items: center;
+
+    .counter-btn {
+        padding: 0;
+    }
+    span {
+        font-size: 24px;
+        font-weight: 500;
+        margin: 0px 10px;
+    }
+}

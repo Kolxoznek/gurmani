@@ -1,11 +1,10 @@
 import '../scss/style.scss'
 import '../js/blocks/slider.js'
-import '../js/blocks/product.js'
-import '../js/blocks/menu.js'
-//import '../js/blocks/menu-cards.js'
+import { renderCategoryCards } from './blocks/render-cards.js'
+import { renderCartCard } from './blocks/render-cart-cards.js'
+import { togglePage } from './blocks/toggle-pages.js'
+import axios from 'axios'
 
-
-// создаю обьект с элементами страниц
 const navbar = document.querySelector('.navbar')
 const categories = document.querySelectorAll('.category')
 const product = document.querySelector('#product')
@@ -15,44 +14,12 @@ const cardsContainers = {}
 document.querySelectorAll('[data-cards]').forEach(container => {
     cardsContainers[container.getAttribute('data-cards')] = container
 })
-console.log(cardsContainers)
-const pages = {}
-document.querySelectorAll('[data-page]').forEach(page => {
-    pages[page.id] = page
-})
-const navItems = {}
-document.querySelectorAll('[data-nav]').forEach(navItem => {
-    navItems[navItem.getAttribute('data-nav')] = navItem
-})
-
-
-// показать активную страницу и ее таб
-function showPageAndTab(page, tab) {
-    page.classList.remove('hide')
-    tab.classList.add('nav-active')
-}
-// скрыть все страницы
-function hidePages() {
-    Object.values(pages).forEach(page => {
-        page.classList.add('hide')
-    })
-}
-// скрыть все табы
-function hideActiveTab() {
-    Object.values(navItems).forEach(navItem => {
-        navItem.classList.remove('nav-active')
-    })
-}
 
 // кнопки назад на страницах
 backBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-        if(btn === backBtnProduct) {  
-        } else {
-            hidePages()
-            hideActiveTab()
-    
-            showPageAndTab(pages.main, navItems.main)
+        if(btn !== backBtnProduct) {
+            togglePage('main')
         }
      })
 })
@@ -60,25 +27,63 @@ backBtns.forEach(btn => {
 // навбар
 navbar.addEventListener('click', e => {
     if(e.target.classList.contains('navbar__item')) { 
-        hideActiveTab()
-        hidePages()
-        
-        showPageAndTab(pages[e.target.getAttribute('data-nav')], e.target)
+        togglePage(e.target.getAttribute('data-nav'))
     }
+})
+
+// открыть меню при клике на карточку категорий
+categories.forEach(category => {
+    category.addEventListener('click', e => {
+        if (e.target.getAttribute('data-category')) {
+            renderCategoryCards('category', e.target.getAttribute('data-category'), 'menu')
+
+            document.querySelector('.menu__title').textContent = e.target.querySelector('.category__name').textContent
+
+            togglePage('menu')
+        }
+    })
 })
 
 // кнопка назад в попапе товара
 backBtnProduct.addEventListener('click', () => {
-    
     product.classList.add('product_hide')
     product.classList.remove('product_show')
     document.body.classList.remove('overflow-hidden')
 })
 
+
+const productImg = product.querySelector('.product__img'),
+      productName = product.querySelector('.product__title'),
+      productPrice = product.querySelector('.product__price'),
+      productDescr = product.querySelector('.product__descr'),
+      productFeature = product.querySelector('.feature-btn'),
+      productBuy = product.querySelector('.product__button')
+
 // открыть попап товара
 Object.values(cardsContainers).forEach(container => {
     container.addEventListener('click', e => {
-        if(e.target.getAttribute('data-card')) {
+        const cardId = e.target.getAttribute('data-card')
+        if(cardId) {
+            axios.get('http://localhost:3000/products')
+                .then(data => {
+                    data.data.forEach(item => {
+                        if (item.id === cardId) {
+                            productImg.src = item.img
+                            productName.textContent = item.name
+                            productPrice.textContent = item.price + '₽'
+                            productDescr.textContent = item.descr
+                            productFeature.setAttribute('data-feature-btn', cardId)
+                            productBuy.setAttribute('data-buy-product', cardId)
+                            productFeature.addEventListener('click', () => {
+                                addFavoriteCard(cardId)
+                            })
+                            productBuy.addEventListener('click', () => {
+                                addCartCard(cardId)
+                            })
+                        }
+                    })
+                })
+
             product.classList.add('product_show')
             product.classList.remove('product_hide')
             
@@ -89,59 +94,71 @@ Object.values(cardsContainers).forEach(container => {
     })
 })
 
-// открыть меню при клике на карточку категорий
-categories.forEach(category => {
-    category.addEventListener('click', e => {
-        if (e.target.getAttribute('data-category')) {
-            hideActiveTab()
-            hidePages()
+function renderPopularCards() {
+    renderCategoryCards('popular', true, 'popular')
+}
+renderPopularCards()
+
+function addFavoriteCard(attr) {
+    const favorite = JSON.parse(localStorage.getItem('favorite'))
+    console.log(favorite)
+    const local = new Set(favorite)
     
-            renderCategoryCards(e.target.getAttribute('data-category'), 'menu')
+    if(local.has(attr)) {
+        local.delete(attr)
+    } else {
+        local.add(attr)
+    }
 
-            pages.menu.querySelector('.menu__title').textContent = e.target.querySelector('.category__name').textContent
+    const arr = [...local]
+    renderFavoriteCards(arr)
     
-            showPageAndTab(pages.menu, navbar.querySelector(`[data-nav="menu"]`))
-        }
-    })
-})
-
-function renderCategoryCards(attr, container) {
-    fetch(`http://localhost:3000/${attr || ''}`)
-        .then(data => {
-            return data.json()
-        })
-        .then(data => {
-            const containerItems = document.querySelector(`[data-cards=${container}]`)
-            containerItems.innerHTML = ''
-            data.forEach(card => {
-                const element = document.createElement('article')
-                element.classList.add('card')
-                element.setAttribute('data-card', '0005')
-                element.innerHTML += `
-                    <div class="card__top">
-                        <img src="${card['img']}" alt="">
-                    </div>
-                    <div class="card__middle">
-                        <h3 class="card__name">
-                            ${card['name']}
-                        </h3>
-                        <span class="card__desc">
-                            ${card['card-descr']}
-                        </span>
-                    </div>
-                    <div class="card__bottom">
-                        <span class="card__price">
-                            ${card['price']} ₽
-                        </span>
-                        <a href="#" class="add-cart__btn">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="#ff6800" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.5 3.5C1.5 2.39543 2.39543 1.5 3.5 1.5H20.5C21.6046 1.5 22.5 2.39543 22.5 3.5V20.5C22.5 21.6046 21.6046 22.5 20.5 22.5H3.5C2.39543 22.5 1.5 21.6046 1.5 20.5V3.5Z" stroke="#FF6800" stroke-width="0" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 7.33331V16.6666" stroke="#2c2c2c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M7.33337 12H16.6667" stroke="#2c2c2c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                        </a>
-                    </div>
-                `
-
-                containerItems.append(element)
-            })
-        })
+    localStorage.setItem('favorite', JSON.stringify(arr))
 }
 
+function renderFavoriteCards(cardsIdArray) {
+    document.querySelector(`[data-cards='favorite'`).innerHTML = ''
+    cardsIdArray.forEach(id => {
+        renderCategoryCards('id', id, 'favorite')
+    })
+}
+
+function addCartCard(attr) {
+    const cart = JSON.parse(localStorage.getItem('cart'))
+    console.log(cart)
+    const local = new Set(cart)
+    
+    if(!local.has(attr)) {
+        local.add(attr)
+    }
+
+    const arr = [...local]
+    console.log(arr)
+    renderCartCards(arr)
+    localStorage.setItem('cart', JSON.stringify(arr))
+}
+
+function renderCartCards(cardsIdArray) {
+    document.querySelector(`[data-cards='cart']`).innerHTML = ''
+    cardsIdArray.forEach(id => {
+        renderCartCard('id', id, 'cart')
+    })
+}
+
+// слушатель на контейнерах карточек
+Object.values(cardsContainers).forEach(container => {
+    container.addEventListener('click', e => {
+        console.log(e.target)
+        if(e.target.classList.contains('feature-btn')) {
+            const attr = e.target.getAttribute('data-feature-btn')
+            addFavoriteCard(attr)
+            
+        }
+        if(e.target.classList.contains('add-cart__btn')) {
+            const attr = e.target.getAttribute('data-buy-product')
+            addCartCard(attr)
+        }
+
+    })
+})
 

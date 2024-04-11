@@ -10,6 +10,8 @@
 @import 'blocks/card.scss';
 @import 'blocks/product-modal.scss';
 @import 'blocks/btns.scss';
+@import 'blocks/cart-card.scss';
+@import 'blocks/counter.scss';
 
 
 html {
@@ -27,6 +29,8 @@ a {
 }
 button {
     border: none;
+    padding: 0;
+    background: transparent;
 }
 .container {
     max-width: 1280px;
@@ -56,6 +60,7 @@ button {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    margin: 1rem 0;
 }
 
 .hide {

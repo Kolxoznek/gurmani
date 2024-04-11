@@ -1,0 +1,153 @@
+{
+  "products": [
+    {
+      "id": "88c3",
+      "name": "Мини сет",
+      "card-descr": "24шт/600гр",
+      "descr": "",
+      "price": 810,
+      "img": "/images/Ð¼Ð¸Ð½Ð¸ 585Ñ_385.png",
+      "category": "sushi-sets"
+    },
+    {
+      "id": "8fef",
+      "name": "Запеченый сет",
+      "card-descr": "24шт/800гр",
+      "descr": "",
+      "price": 995,
+      "img": "/images/Ð·Ð°Ð¿ÐµÑ_ÐµÐ½Ñ_Ð¹ 585Ñ_385.png",
+      "category": "sushi-sets"
+    },
+    {
+      "id": "7a25",
+      "name": "Сет три цезаря",
+      "card-descr": "24шт/750гр",
+      "descr": "",
+      "price": 926,
+      "img": "/images/3 Ñ_ÐµÐ·Ð°Ñ_Ñ_ 585Ñ_385.png",
+      "category": "sushi-sets"
+    },
+    {
+      "id": "5b2a",
+      "name": "Сет для двоих",
+      "card-descr": "32шт/750гр",
+      "descr": "",
+      "price": 950,
+      "img": "/images/Ñ_ÐµÑ_ Ð´Ð»Ñ_ Ð´Ð²Ð¾Ð¸Ñ_ 585Ñ_385(1).png",
+      "category": "sushi-sets"
+    },
+    {
+      "id": "109e",
+      "name": "Сет вулкан мини",
+      "card-descr": "16шт/550гр",
+      "descr": "",
+      "price": 770,
+      "img": "/images/Ð²Ñ_Ð»ÐºÐ°Ð½ Ð¼Ð¸Ð½Ð¸ 585Ñ_385.png",
+      "category": "sushi-sets"
+    },
+    {
+      "id": "cce2",
+      "name": "Филадельфия сет",
+      "card-descr": "24шт/750гр",
+      "descr": "",
+      "price": 1250,
+      "img": "/images/Ñ_Ð¸Ð»Ð° 585Ñ_385.png",
+      "category": "sushi-sets",
+      "popular": true
+    },
+    {
+      "id": "5dd3",
+      "name": "Пеперони",
+      "card-descr": "",
+      "descr": "",
+      "price": 450,
+      "img": "/images/(4Ñ_ÐµÐ·Ð¾Ð½Ð°)890Ñ_748.png",
+      "category": "pizza",
+      "radio": [
+        "25 см",
+        "30 см"
+      ],
+      "popular": true
+    },
+    {
+      "id": "321c",
+      "name": "Филадельфия с лососем",
+      "card-descr": "",
+      "descr": "Лосось, огурец, сливочный сыр, рис",
+      "price": 384,
+      "img": "/images/DSC03109  max.png",
+      "category": "cold-rolls",
+      "popular": true
+    },
+    {
+      "id": "1a79",
+      "name": "Жаренный с креветкой",
+      "card-descr": "",
+      "descr": "Креветка, огурец, сливочный сыр, рис, унаги, кунжут",
+      "price": 394,
+      "img": "/images/Ð_Ð_Ð Ð_Ð_Ð«Ð_ Ð¡ Ð_Ð Ð_Ð_Ð_Ð¢Ð_Ð_Ð_ max.png",
+      "category": "fried-rolls",
+      "popular": true
+    },
+    {
+      "id": "f3c2",
+      "name": "Запеченная филадельфия",
+      "card-descr": "",
+      "descr": "Лосось, авокадо, сливочный сыр, рис, унаги, кунжут",
+      "price": 396,
+      "img": "/images/Запеченная филадельфия.jpg",
+      "category": "baked-rolls",
+      "popular": true
+    },
+    {
+      "id": "da71",
+      "name": "Маки с лососем",
+      "card-descr": "",
+      "descr": "",
+      "price": 196,
+      "img": "/images/МАКИ С ЛОСОСЕМ max.png",
+      "category": "maki-and-sushi",
+      "popular": true
+    },
+    {
+      "id": "6e54",
+      "name": "Поке с креветками",
+      "card-descr": "",
+      "descr": "Креветки, авокадо, огурец, чука, черри, красный лук, рис, ореховый соус, тобико, зеленый лук, кунжут",
+      "price": 450,
+      "img": "/images/photo_2023-11-27 10.45.27.jpeg",
+      "category": "salads-and-poke",
+      "popular": true
+    },
+    {
+      "id": "f7e3",
+      "name": "WOK с овощами гречневая",
+      "card-descr": "",
+      "descr": "Шампиньоны, болгарский перец, красный лук, морковь, устричный соус, лапша на выбор, зеленый лук, кунжут",
+      "price": 304,
+      "img": "/images/WOK с овощами гречневая.jpg",
+      "category": "hot-dishes",
+      "popular": true
+    },
+    {
+      "id": "e9c1",
+      "name": "Картофель по-деревенски",
+      "card-descr": "",
+      "descr": "",
+      "price": 170,
+      "img": "/images/photo_2023-11-27 10.53.15.jpeg",
+      "category": "hot-appetizers",
+      "popular": true
+    },
+    {
+      "id": "9346",
+      "name": "Соевый соус",
+      "card-descr": "",
+      "descr": "",
+      "price": 25,
+      "img": "/images/Соевый соус.jpg",
+      "category": "sauce",
+      "popular": true
+    }
+  ]
+}
