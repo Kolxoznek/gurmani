@@ -6,7 +6,6 @@
 @import 'blocks/sliders.scss';
 @import 'blocks/category.scss';
 @import 'blocks/footer.scss';
-@import 'blocks/popular.scss';
 @import 'blocks/card.scss';
 @import 'blocks/product-modal.scss';
 @import 'blocks/btns.scss';
@@ -31,6 +30,7 @@ button {
     border: none;
     padding: 0;
     background: transparent;
+    line-height: 0;
 }
 .container {
     max-width: 1280px;
@@ -81,11 +81,24 @@ button {
     
 }
 
-.menu__wrapper {
+.cards__wrapper {
     display: flex;
-    gap: 20px;
+    gap: 10px;
     flex-wrap: wrap;
 }
+
 .favorite, .cart, .menu {
     flex: 1;
+}
+
+@media (max-width: 768px) {
+   
+}
+
+@media (max-width: 480px) {
+   .title {
+    margin: 1rem 0;
+   }
+    
+    
 }

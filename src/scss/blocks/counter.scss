@@ -4,8 +4,13 @@
 
     .counter-btn {
         padding: 0;
+
+        svg {
+            pointer-events: none;
+        }
     }
     span {
+        pointer-events: none;
         font-size: 24px;
         font-weight: 500;
         margin: 0px 10px;

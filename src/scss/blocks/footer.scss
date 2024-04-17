@@ -24,3 +24,42 @@ footer {
         font-weight: 500;
     }
 }
+
+@media (max-width: 768px) {
+    footer {
+
+        .social-links {
+
+        }
+        .contacts {
+
+        }
+        .phone-address {
+
+            span {
+            }
+        }
+        .work-time {
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+
+        .social-links {
+
+        }
+        .contacts {
+            text-align: right;
+        }
+        .phone-address {
+
+            span {
+            }
+        }
+        .work-time {
+        }
+    }
+    
+}

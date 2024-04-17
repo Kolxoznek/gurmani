@@ -1,22 +1,25 @@
 .card {
     width: 11rem;
-    max-height: 13rem;
+    min-height: fit-content;
+    max-height: max-content;
     padding: 10px;
     background: $second-bg;
     border-radius: 10px;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: 140px auto 32px;
     box-shadow: 0 0 10px rgba(0, 0, 0, .2);
 }
 
 .card__top {
     display: grid;
     grid-template-columns: 1fr auto;
-    justify-content: center;
+    grid-template-rows: 100%;
     img {
+        justify-self: center;
+        align-self: center;
         pointer-events: none;
         max-width: 100%;
-        max-height: 8rem;
+        max-height: 100%;
         
     }
     button {
@@ -28,12 +31,12 @@
 }
 .card__middle {
     pointer-events: none;
-
+    justify-self: flex-start;
+    margin: 5px 0 0;
     .card__name {
         pointer-events: none;
-        margin: .5rem 0 5px;
         font-size: 1rem;
-        
+        margin: 0;
     }
 
     .card__desc {
@@ -43,12 +46,15 @@
     }
 }
 
+
+
 .card__bottom {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     .card__price {
         pointer-events: none;
+        font-weight: 500;
     }
     .add-cart__btn {
         
@@ -59,4 +65,46 @@
             pointer-events: none;
         }
     }
+}
+
+@media (max-width: 768px) {
+   
+}
+
+@media (max-width: 480px) {
+   
+    .card {
+        width: calc(50% - 5px);
+        box-sizing: border-box;
+        grid-template-rows: 100px auto 32px;
+        
+        .card__middle {
+
+        
+            .card__name {
+
+                font-size: .9rem;
+                
+            }
+        
+            .card__desc {
+                font-size: .7rem;
+            }
+        }
+
+        .card__bottom {
+
+            .card__price {
+                font-size: .8rem;
+            }
+            .add-cart__btn {
+                
+        
+                svg {
+                    
+                }
+            }
+        }
+    }
+    
 }

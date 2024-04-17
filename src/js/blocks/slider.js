@@ -44,10 +44,11 @@ const sliderCategory = tns({
       },
       480: {
         items: 4,
-        gutter: 10,
+        
       },
       320: {
         items: 3,
+        gutter: 10,
       }
     }
   });
@@ -70,10 +71,10 @@ const sliderMenu = tns({
       },
       480: {
         items: 4,
-        gutter: 10,
       },
       320: {
         items: 3,
+        gutter: 10,
       }
     }
   });
@@ -117,45 +118,18 @@ const sliderDiscont = tns({
     prevButton: '.compound__prev',
     responsive: {
       1024: {
-        items: 6,
+        items: 5,
       },
       768: {
-        items: 5,
+        items: 4,
       },
       480: {
         items: 4,
       },
       320: {
         items: 3,
+        gutter: 10,
       }
     }
   });
   
-  const sliderRecomend = tns({
-    container: '.recomend__slider',
-    slideBy: 1,
-    autoplay: true,
-    autoplayHoverPause: false,
-    autoplayButtonOutput: false,
-    nav: false,
-    nextButton: '.recomend__next',
-    prevButton: '.recomend__prev',
-    responsive: {
-      1140: {
-        items: 5,
-      },
-      930: {
-        items: 4,
-      },
-      768: {
-        items: 3,
-      },
-      480: {
-        items: 3,
-        gutter: 10,
-      },
-      320: {
-        items: 3,
-      }
-    }
-  });
