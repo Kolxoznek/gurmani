@@ -1,7 +1,7 @@
 import '../scss/style.scss'
 import '../js/blocks/slider.js'
 import { renderCategoryCards } from './blocks/render-cards.js'
-import { renderCartCard } from './blocks/render-cart-cards.js'
+import { renderCartCards } from './blocks/render-cart-cards.js'
 import { togglePage } from './blocks/toggle-pages.js'
 
 import axios from 'axios'
@@ -12,23 +12,11 @@ renderCategoryCards('popular', true, 'popular')
 renderCategoryCards('popular', true, 'recomend')
 
 
-// рендер товаров в избранном и корзине если они были добавлены в прошлых посещениях на сайт
+// рендер товаров в избранном если они были добавлены в прошлых посещениях на сайт
 renderCardsFromIdArray(JSON.parse(localStorage.getItem('favorite')) || [], 'favorite')
-renderCardsFromIdArray(JSON.parse(localStorage.getItem('cart')) || [], 'cart')
 
-
-// добавление товаров в избранное или корзину
-document.addEventListener('click', e => {
-    if (e.target.getAttribute('data-feature-btn')) {
-        addFavoriteCard(e.target.getAttribute('data-feature-btn'))
-    }
-
-    if (e.target.getAttribute('data-buy-product')) {
-        addCartCard(e.target.getAttribute('data-buy-product'))
-    }
-})
-
-function addFavoriteCard(attr) {
+// добавление/удаление карточки в избранном
+function toggleFavoriteCard(attr) {
     const favorite = JSON.parse(localStorage.getItem('favorite'))
     const local = new Set(favorite)
     
@@ -43,31 +31,87 @@ function addFavoriteCard(attr) {
     localStorage.setItem('favorite', JSON.stringify(arr))
 }
 
-function addCartCard(attr) {
-    const cart = JSON.parse(localStorage.getItem('cart'))
-    const local = new Set(cart)
-    
-    if(!local.has(attr)) {
-        local.add(attr)
-    }
-
-    const arr = [...local]
-    renderCardsFromIdArray(arr, 'cart')
-    localStorage.setItem('cart', JSON.stringify(arr))
-}
-
 function renderCardsFromIdArray(cardsIdArray, container) {
-    document.querySelector(`[data-cards='${container}'`).innerHTML = ''
-    if (container === 'cart') {
-        cardsIdArray.forEach(id => {
-            renderCartCard('id', id, container)
-        })
-    } else {
+    document.querySelector(`[data-cards="${container}"`).innerHTML = ''
         cardsIdArray.forEach(id => {
             renderCategoryCards('id', id, container)
         })
+}
+
+
+function addCartProduct(attr, count = 1) {
+    axios.get('http://localhost:3000/products')
+    .then(data => {
+            let objLocal = JSON.parse(localStorage.getItem('cart'));
+            if (!objLocal) {
+                objLocal = {}
+            }
+            const product = data.data.find(item => {
+                return item.id === attr
+            })
+            product.count = count
+
+            objLocal[product.id] = product
+            localStorage.setItem('cart', JSON.stringify(objLocal))
+        })
+}
+
+function deleteCartProduct(attr) {
+    const objLocal = JSON.parse(localStorage.getItem('cart'))
+    delete objLocal[attr]
+    localStorage.setItem('cart', JSON.stringify(objLocal))
     }
-    
+
+
+
+// добавление товаров в избранное или корзину по клику на кнопки
+document.addEventListener('click', e => {
+
+    if (e.target.getAttribute('data-feature-btn')) {
+        toggleFavoriteCard(e.target.getAttribute('data-feature-btn'))
+    }
+
+    if (e.target.getAttribute('data-buy-product')) {
+        addCartProduct(e.target.getAttribute('data-buy-product'))
+
+        if (e.target.classList.contains('product__button')) {
+            const count = document.querySelector('.product .product__count').textContent
+            addCartProduct(e.target.getAttribute('data-buy-product'), count)
+        }
+    }
+
+    if (e.target.getAttribute('data-cart-minus')) {
+        changeCountCartCard(-1, e.target.getAttribute('data-cart-minus'))
+
+    }
+
+    if (e.target.getAttribute('data-cart-plus')) {
+        changeCountCartCard(1, e.target.getAttribute('data-cart-plus'))
+
+    }
+})
+
+function changePriceCartCard(attr, count) {
+    const price = JSON.parse(localStorage.getItem('cart'))[attr].price
+    const priceElement = document.querySelector(`.cart-card[data-card="${attr}"] .card__price`)
+
+    priceElement.textContent = price * +count.textContent + '₽'
+}
+
+function changeCountCartCard(n, attr) {
+    let count = document.querySelector(`[data-cart-count="${attr}"]`)
+    count.textContent = +count.textContent + n
+
+    if (+count.textContent === 0) {
+        deleteCartProduct(attr)
+        renderCartCards()
+    } else if (+count.textContent > 10) {
+        count.textContent = 10
+        addCartProduct(attr, +count.textContent)
+    } else {
+        addCartProduct(attr, +count.textContent)
+        changePriceCartCard(attr, count)
+    }
 }
 
 
@@ -83,7 +127,7 @@ backBtns.forEach(btn => {
             product.classList.add('product_hide')
             product.classList.remove('product_show')
             document.body.classList.remove('overflow-hidden')
-            
+            document.querySelector('#product .product__count').textContent = 1
         } else {
             togglePage('main')
         }
@@ -101,9 +145,14 @@ navbar.addEventListener('click', e => {
         if(e.target.getAttribute('data-nav') === 'menu') {
             renderCategoryCards('category', 'sushi-sets', 'menu')
         }
+        if(e.target.getAttribute('data-nav') === 'cart') {
+            renderCartCards()
+            
+        }
         togglePage(e.target.getAttribute('data-nav'))
     }
 })
+
 
 
 // открыть меню при клике на карточку категорий
@@ -129,8 +178,29 @@ const productImg = product.querySelector('.product__img'),
       productPrice = product.querySelector('.product__price'),
       productDescr = product.querySelector('.product__descr'),
       productFeature = product.querySelector('.feature-btn'),
-      productBuy = product.querySelector('.product__button')
+      productBuy = product.querySelector('.product__button'),
+      productCountWrapper = product.querySelector('.product__counter'),
+      countNumber = productCountWrapper.querySelector('.product__count'),
+      productRadioWrapper = product.querySelector('.product__radio')
 
+let price
+
+productCountWrapper.addEventListener('click', e => {
+    let count = countNumber.textContent
+    
+
+
+    if (e.target.classList.contains('product__minus') && count > 1) {
+        count--
+    } 
+    
+    if (e.target.classList.contains('product__plus') && count < 10) {
+        count++
+    } 
+    countNumber.textContent = count
+
+    productPrice.textContent = price * count + '₽'
+    })
 
 const cardsContainers = {}
 document.querySelectorAll('[data-cards]').forEach(container => {
@@ -152,6 +222,15 @@ Object.values(cardsContainers).forEach(container => {
                             productDescr.textContent = item.descr
                             productFeature.setAttribute('data-feature-btn', cardId)
                             productBuy.setAttribute('data-buy-product', cardId)
+                            productCountWrapper.setAttribute('data-counter', cardId)
+                            price = item.price
+
+                            if (item.radio) {
+                                productRadioWrapper.classList.remove('hide')
+                            } else {
+                                productRadioWrapper.classList.add('hide')
+                            }
+                            
                         }
                     })
                 })
@@ -165,3 +244,6 @@ Object.values(cardsContainers).forEach(container => {
         }
     })
 })
+
+
+
