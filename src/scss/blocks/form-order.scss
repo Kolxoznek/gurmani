@@ -1,0 +1,132 @@
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    [type="radio"], [type="checkbox"] {
+        display: none;
+    }
+    
+    input, label, select {
+        padding: 14px 5px 14px 14px !important;
+        background: $second-bg;
+        border: none !important;
+        border-radius: 10px !important;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, .1);
+        box-sizing: border-box;
+        width: calc(50% - 5px);
+        transition: all .5s;
+    }
+    
+    [name="name"], [name="pre-order-time"], [for="private-house"], [name="street"], [name="comment"] {
+        width: 100%;
+    }
+
+    [name="house"], [name="apartment"], [name="entrance"], [name="floor"] {
+        width: calc(25% - 7.5px);
+    }
+
+    label {
+        display: flex !important;
+        align-items: center;
+        line-height: 100%;
+
+        svg {
+            margin-right: 5px;
+        }
+    }
+
+    input[type="radio"] + label, input[type="checkbox"] + label {
+        
+        &:hover {
+            background: $hover-color;
+        }
+    }
+
+    input[type="radio"]:checked + label {
+
+        svg {
+
+            path {
+                fill: $second-bg;
+            }
+        }   
+    }
+
+    input[type="checkbox"]:checked + label {
+
+         background: $accent;
+         color: $second-bg;
+    }
+}
+
+
+.form-info {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 10px;
+    label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+
+        input {
+            width: 60%;
+            
+            border: none;
+            background: $second-bg;
+            border-radius: 10px;
+            padding: 15px;
+        }
+
+        button {
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+            background: $accent;
+            color: $second-bg;
+            border-radius: 10px;
+            transform: translateX(calc(-100% - 10px));
+        }
+    }
+    
+
+    .form-info__wrapper {
+        background: $second-bg;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, .1);
+        box-sizing: border-box;
+
+        .form-info__desc {
+            display: flex;
+            justify-content: space-between;
+
+            p {
+                margin: 0;
+                margin-bottom: 10px;
+            }
+
+            span:after {
+                content: ' ₽';
+            }
+
+            &:nth-child(3) {
+                padding-bottom: 20px;
+                margin-bottom: 10px;
+                border-bottom: black dashed 1px;
+            }
+        }
+
+        .polity-link {
+            text-decoration: underline;
+        }
+
+        button {
+            margin-top: 20px;
+            width: 100%;
+        }
+    }
+}

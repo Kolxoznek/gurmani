@@ -1,10 +1,5 @@
 import axios from 'axios'
-
-function sliceText(str) {
-    if(str.length > 26) {
-        return str.slice(0, 26) + '...'
-    } else return str
-}
+import sliceText from '../helpers/slice-text'
 
 function renderCategoryCards(key, attr, container) {
     const containerItems = document.querySelector(`[data-cards=${container}]`)
@@ -12,16 +7,13 @@ function renderCategoryCards(key, attr, container) {
     axios.get(`http://localhost:3000/products/`)
         .then(data => {
             const filteredArr = data.data.filter(item => item[key] === attr)
-            return Promise.resolve(filteredArr)
+            return filteredArr
         })
         .then(data => {
             data.forEach(card => {
-                let name = card['name']
-                let desc = card['card-descr']
-                const element = document.createElement('article')
-                element.classList.add('card')
-                element.setAttribute('data-card', `${card.id}`)
-                element.innerHTML += `
+
+                containerItems.insertAdjacentHTML('afterbegin', `
+                <article class="card" data-card="${card.id}">
                     <div class="card__top">
                         <img src="${card['img']}" alt="${card['name']}">
                         <button data-feature-btn="${card.id}" class="feature-btn">
@@ -30,10 +22,10 @@ function renderCategoryCards(key, attr, container) {
                     </div>
                     <div class="card__middle">
                         <h3 class="card__name">
-                            ${sliceText(name)}
+                            ${sliceText(card['name'])}
                         </h3>
                         <span class="card__desc">
-                            ${sliceText(desc)}
+                            ${sliceText(card['card-descr'])}
                         </span>
                     </div>
                     <div class="card__bottom">
@@ -44,9 +36,8 @@ function renderCategoryCards(key, attr, container) {
                                 <svg width="32" height="32" viewBox="0 0 24 24" fill="#ff6800" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.5 3.5C1.5 2.39543 2.39543 1.5 3.5 1.5H20.5C21.6046 1.5 22.5 2.39543 22.5 3.5V20.5C22.5 21.6046 21.6046 22.5 20.5 22.5H3.5C2.39543 22.5 1.5 21.6046 1.5 20.5V3.5Z" stroke="#FF6800" stroke-width="0" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 7.33331V16.6666" stroke="#2c2c2c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M7.33337 12H16.6667" stroke="#2c2c2c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                             </button>
                     </div>
-                `
-
-                containerItems.append(element)
+                </article>
+                `)
             })
         })
 }

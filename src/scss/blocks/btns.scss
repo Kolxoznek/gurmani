@@ -44,7 +44,36 @@ input[type="radio"] + label {
 
 /* Стили для активных радио-кнопок */
 input[type="radio"]:checked + label {
-    background-color: #007bff;
+    background-color: $accent;
     color: #fff;
-    border-color: #007bff;
+    border-color: $accent;
+}
+
+.cart-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $second-bg;
+    background: $accent;
+    border-radius: 10px;
+    padding: 15px;
+    
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: start;
+        p {
+            margin: 0;
+            margin-bottom: 10px;
+            line-height: 100%;
+            font-size: 16px;
+        }
+        span {
+            line-height: 100%;
+            &::after {
+                content: ' ₽';
+            }
+        }
+    }
 }

@@ -1,5 +1,6 @@
 import '../scss/style.scss'
 import '../js/blocks/slider.js'
+import '../js/blocks/form-order.js'
 import { renderCategoryCards } from './blocks/render-cards.js'
 import { renderCartCards } from './blocks/render-cart-cards.js'
 import { togglePage } from './blocks/toggle-pages.js'
@@ -199,7 +200,7 @@ productCountWrapper.addEventListener('click', e => {
     } 
     countNumber.textContent = count
 
-    productPrice.textContent = price * count + '₽'
+    productPrice.textContent = `${price * count}₽`
     })
 
 const cardsContainers = {}

@@ -218,7 +218,92 @@
 							
 						</div>
 						<aside class="cart__form-container">
+							<form name="order" action="">
+								<input name="name" type="text" placeholder="Введите имя">
 
+								<input name="phone" type="text" placeholder="Введите телефон">
+								<select name="person-count">
+									<option value="0">Без приборов</option>
+									<option value="1">Кол-во персон(1)</option>
+									<option value="2">Кол-во персон(2)</option>
+									<option value="3">Кол-во персон(3)</option>
+									<option value="4">Кол-во персон(4)</option>
+									<option value="5">Кол-во персон(5)</option>
+									<option value="6">Кол-во персон(6)</option>
+									<option value="7">Кол-во персон(7)</option>
+									<option value="8">Кол-во персон(8)</option>
+									<option value="9">Кол-во персон(9)</option>
+								</select>
+
+								<input name="receiving-type" id="pickup" type="radio">
+								<label for="pickup">
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" ><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM7 9C7 6.24 9.24 4 12 4C14.76 4 17 6.24 17 9C17 11.88 14.12 16.19 12 18.88C9.92 16.21 7 11.85 7 9ZM9.5 9C9.5 7.61929 10.6193 6.5 12 6.5C12.8932 6.5 13.7185 6.9765 14.1651 7.75C14.6116 8.5235 14.6116 9.4765 14.1651 10.25C13.7185 11.0235 12.8932 11.5 12 11.5C10.6193 11.5 9.5 10.3807 9.5 9Z" fill="#2c2c2c"></path></svg>
+									Самовывоз -10%
+								</label>
+								<input name="receiving-type" id="delivery" type="radio" checked>
+								<label for="delivery">
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" ><path fill-rule="evenodd" clip-rule="evenodd" d="M18.92 5.01C18.72 4.42 18.16 4 17.5 4H6.5C5.84 4 5.29 4.42 5.08 5.01L3 11V19C3 19.55 3.45 20 4 20H5C5.55 20 6 19.55 6 19V18H18V19C18 19.55 18.45 20 19 20H20C20.55 20 21 19.55 21 19V11L18.92 5.01ZM6.85 6H17.14L18.22 9.11H5.77L6.85 6ZM5 16H19V11H5V16ZM7.5 12C6.67157 12 6 12.6716 6 13.5C6 14.3284 6.67157 15 7.5 15C8.32843 15 9 14.3284 9 13.5C9 12.6716 8.32843 12 7.5 12ZM15 13.5C15 12.6716 15.6716 12 16.5 12C17.3284 12 18 12.6716 18 13.5C18 14.3284 17.3284 15 16.5 15C15.6716 15 15 14.3284 15 13.5Z" fill="#2c2c2c" ></path></svg>
+									Доставка по адресу
+								</label>
+								
+								<input name="time-receipt" id="soon" type="radio" checked>
+								<label for="soon">Ближайшее время</label>
+								<input name="time-receipt" id="pre-order" type="radio">
+								<label for="pre-order">Предзаказ</label>
+
+								<select name="pre-order-time">
+									<option value="">10:00</option>
+								</select>
+
+								<input name="private-house"  type="checkbox" id="private-house">
+								<label for="private-house">Частный дом</label>
+
+								<input name="street" type="text" placeholder="Улица">
+
+								<input name="house" type="text" placeholder="Дом">
+								<input name="apartment" type="text" placeholder="Квартира">
+								<input name="entrance" type="text" placeholder="Подьезд">
+								<input name="floor" type="text" placeholder="Этаж">
+
+								<input name="payment-method" id="card" type="radio" checked>
+								<label for="card">Безналичными</label>
+								<input name="payment-method" id="cash" type="radio">
+								<label for="cash">Наличными</label>
+
+								<input name="comment" type="text" placeholder="Комментарий к заказу...">
+
+							</form>
+							<section class="form-info">
+								<label>
+									<input name="promocode" type="text" placeholder="Промокод">
+									<button>%</button>
+								</label>
+
+								<div class="form-info__wrapper">
+									<div class="form-info__desc">
+										<p>Промежуточный итог</p>
+										<span>123</span>
+									</div>
+									<div class="form-info__desc">
+										<p>Промокод</p>
+										<span>123</span>
+									</div>
+									<div class="form-info__desc">
+										<p>Доставка</p>
+										<span>123</span>
+									</div>
+
+									<a href="" class="polity-link">Политика конфиденциальности</a>
+
+									<button class="cart-btn">
+										<div>
+											<p>Оформить</p>
+											<span>123</span>
+										</div>
+										<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12H20" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14 6L20 12L14 18" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+									</button>
+								</div>
+							</section>
 						</aside>
 					</section>
 			</section>
