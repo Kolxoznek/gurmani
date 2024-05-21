@@ -1,5 +1,9 @@
 import axios from 'axios'
 import sliceText from '../helpers/slice-text'
+import activateFavoriteBtn from '../helpers/active-feature-btn'
+import activateBuyBtn from '../helpers/activate-buy-btn'
+import {showCardCounter} from '../helpers/show-hide-card-counter'
+import changePriceCartCard from '../helpers/change-price-cart-card'
 
 function renderCategoryCards(key, attr, container) {
     const containerItems = document.querySelector(`[data-cards=${container}]`)
@@ -11,6 +15,8 @@ function renderCategoryCards(key, attr, container) {
         })
         .then(data => {
             data.forEach(card => {
+                const localCart = JSON.parse(localStorage.getItem('cart')) || {}
+                const count = localCart[card.id]?.count || 1
 
                 containerItems.insertAdjacentHTML('afterbegin', `
                 <article class="card" data-card="${card.id}">
@@ -29,15 +35,39 @@ function renderCategoryCards(key, attr, container) {
                         </span>
                     </div>
                     <div class="card__bottom">
-                            <span class="card__price">
-                                ${card['price']} ₽
-                            </span>
-                            <button class="add-cart__btn" data-buy-product="${card.id}">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="#ff6800" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.5 3.5C1.5 2.39543 2.39543 1.5 3.5 1.5H20.5C21.6046 1.5 22.5 2.39543 22.5 3.5V20.5C22.5 21.6046 21.6046 22.5 20.5 22.5H3.5C2.39543 22.5 1.5 21.6046 1.5 20.5V3.5Z" stroke="#FF6800" stroke-width="0" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 7.33331V16.6666" stroke="#2c2c2c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M7.33337 12H16.6667" stroke="#2c2c2c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                        <span class="card__price">
+                            ${card['price']}
+                        </span>
+                        <button class="add-cart__btn" data-buy-product="${card.id}">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="10" fill="#fdb571"></rect><path d="M15.7895 8.91223V22.6666" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M8.91229 15.7894H22.6667" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                        </button>
+
+                        <div class="product__counter hide" data-card-counter="${card.id}">
+                            <button class="product__minus counter-btn" data-minus="${card.id}">
+                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="10" fill="#FF6800"></rect><path d="M10.1367 15.928H21.7193" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                             </button>
+                            <span class="product__count" data-count="${card.id}">
+                                ${count}
+                            </span>
+                            <button class="product__plus counter-btn" data-plus="${card.id}">
+                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="10" fill="#FF6800"></rect><path d="M15.7895 8.91223V22.6666" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M8.91229 15.7894H22.6667" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                            </button>
+                        </div>
                     </div>
                 </article>
                 `)
+
+                activateFavoriteBtn(card.id)
+                activateBuyBtn(card.id)
+                
+                
+                
+                if (localCart[card.id]) {
+                    showCardCounter(card.id)
+                    changePriceCartCard(card.id, count)
+                }
+
+
             })
         })
 }

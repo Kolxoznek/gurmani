@@ -1,6 +1,6 @@
 function renderCartCards() {
     const containerItems = document.querySelector(`[data-cards="cart"]`)
-    const arrProducts = Object.values(JSON.parse(localStorage.getItem('cart')))
+    const arrProducts = Object.values(JSON.parse(localStorage.getItem('cart')) || []) 
     if (arrProducts.length > 0) {
         containerItems.innerHTML = ''
     } else {
@@ -27,7 +27,7 @@ function renderCartCards() {
                     ${product.name}
                 </h3>
                 <span class="card__price">
-                    ${product.price * product.count} ₽
+                    ${product.price * product.count}
                 </span>
                 <div class="product__radio hide">
                     <div class="product__radio-item">
@@ -41,11 +41,11 @@ function renderCartCards() {
                 </div>
             </div>
             <div class="product__counter">
-                <button class="product__minus counter-btn" data-cart-minus="${product.id}">
+                <button class="product__minus counter-btn" data-minus="${product.id}">
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="10" fill="#FF6800"></rect><path d="M10.1367 15.928H21.7193" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                 </button>
-                <span class="product__count" data-cart-count="${product.id}">${product.count}</span>
-                <button class="product__plus counter-btn" data-cart-plus="${product.id}">
+                <span class="product__count" data-count="${product.id}">${product.count}</span>
+                <button class="product__plus counter-btn" data-plus="${product.id}">
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="10" fill="#FF6800"></rect><path d="M15.7895 8.91223V22.6666" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M8.91229 15.7894H22.6667" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                 </button>
             </div>

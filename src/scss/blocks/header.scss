@@ -11,6 +11,7 @@ header {
     .logo {
         display: flex;
         align-items: center;
+        z-index: 100000;
         img {
             width: 2.5rem;
             margin-right: .3rem;
@@ -42,15 +43,29 @@ header {
 
     .navbar {
         display: flex;
-
+        gap: 2px;
         .navbar__item {
+            cursor: pointer;
             text-decoration: none;
             padding: 6px 10px;
+            border-radius: 10px;
+            transition: all .2s;
             svg {
                 pointer-events: none;
             }
             span {
                 display: none;
+            }
+
+            &:hover {
+                background: $hover-color;
+
+                svg {
+                    path {
+                        fill: $second-bg;
+                        stroke: $second-bg;
+                    }
+                }
             }
         }
 
@@ -58,7 +73,7 @@ header {
             background: $accent;
             display: flex;
             align-items: center;
-            border-radius: 10px;
+            
             svg {
                 path {
                     fill: $second-bg;

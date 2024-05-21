@@ -24,8 +24,13 @@
             }
         }
     }
-
+    .prev:hover, .next:hover {
+        div {
+            background: $hover-color;
+        }
+    }
     .prev, .next {
+        cursor: pointer;
         position: absolute;
         width: 30px;
         height: 100%;
@@ -42,6 +47,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: all .2s;
     
             div {
                 width: 10px;

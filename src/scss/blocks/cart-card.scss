@@ -10,7 +10,6 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, .2);
 
         .card__img {
-            pointer-events: none;
             display: flex;
             align-items: center;
             
@@ -21,7 +20,6 @@
         }
 
         .card__info {
-            pointer-events: none;
             display: flex;
             flex-direction: column;
             margin-left: 20px;

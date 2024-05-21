@@ -1,0 +1,116 @@
+@import '../variables';
+
+.preloader {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: transparent;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 1;
+		animation: swipePreloader 3s ease;
+
+		.preloader__wrapper {
+			margin-right: 30px;
+			position: relative;
+			line-height: 100%;
+			height: fit-content;
+
+			.preloader__circle {
+					width: 100%;
+					height: 100%;
+					background: $accent;
+					border-radius: 100%;
+					position: absolute;
+					z-index: -1;
+					transform: scale(.9) translate(0%, 0%);
+					animation: circleAnimation 3s ease .01s;
+	
+					&:nth-child(2) {
+						z-index: -2;
+						background: $hover-color;
+						animation: secondCircleAnimation 3s ease;
+					}
+			}
+	
+			.preloader__logo {
+				width: 15vw;
+			}
+	
+			
+		}
+		
+		.preloader__title {
+			z-index: 10000;
+		}
+
+		span {
+			font-size: 24px;
+			animation: flashingDots 1.5s infinite ease-in-out;
+
+			&:nth-child(2) {
+				animation-delay: .3s;
+			}
+			&:nth-child(3) {
+				animation-delay: .6s;
+			}
+		}
+}
+
+@keyframes flashingDots {
+	0% {
+		opacity: .1;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: .1;
+	}
+}
+
+@keyframes swipePreloader {
+
+	70% {
+		transform: translate(0);
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		transform: translate(-70vw);
+	}
+}
+
+@keyframes circleAnimation {
+		0% {
+			transform: scale(.9);
+		}
+		50% {
+			transform: scale(9);
+		}
+		100% {
+			transform: scale(.1);
+			transform: translate(-70vw);
+		}
+}
+
+@keyframes secondCircleAnimation {
+	0% {
+		transform: scale(.9);
+	}
+	50% {
+		transform: scale(12);
+	}
+	100% {
+		transform: scale(.1);
+		transform: translate(-70vw);
+	}
+}
+	
+
+
+
+

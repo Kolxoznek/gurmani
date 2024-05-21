@@ -10,9 +10,59 @@
         }
     }
     span {
-        pointer-events: none;
         font-size: 24px;
         font-weight: 500;
-        margin: 0px 10px;
+        padding: 0px 10px;
     }
+}
+
+.card {
+    .product__counter {
+        position: relative;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+    
+        .counter-btn {
+            padding: 0;
+    
+            svg {
+            }
+            &:first-child {
+                z-index: 1;
+                position: absolute;
+                transition: all 1s;
+            }
+        }
+        span {
+            z-index: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            position: absolute;
+            transition: all .5s;
+            font-size: 24px;
+            font-weight: 500;
+        }
+
+        &_active {
+    
+            .counter-btn {
+        
+                svg {
+                }
+                &:first-child {
+                    transform: translateX(-200%);
+                }
+            }
+            span {
+                transform: translateX(-100%);
+            }
+        }
+    }
+
 }

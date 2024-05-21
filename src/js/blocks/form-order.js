@@ -1,5 +1,7 @@
 import { showElem, hideElem } from "../helpers/show-hide-elem"
 import { disabledInput, enabledInput} from '../helpers/toggle-input'
+import { renderCartCards } from "./render-cart-cards"
+import { showNotification } from "./notification"
 
 
 const orderForm = document.forms.order
@@ -57,5 +59,65 @@ privateHouse.addEventListener('click', () => {
 })
 
 
+const submitBtn = document.querySelector('.cart-btn')
+
+submitBtn.addEventListener('click', e => {
+    handleFormSubmit(e)
+})
+
+
+function handleFormSubmit(event) {
+    event.preventDefault();
+
+    const form = document.getElementById('order-form');
+
+    const formData = new FormData(form);
+
+    const formValues = {};
+
+    for (let [key, value] of formData.entries()) {
+        formValues[key] = value;
+    }
+
+    const cart = []
+
+    if (localStorage.getItem('cart')) {
+        Object.values(JSON.parse(localStorage.getItem('cart'))).forEach(item => {
+            const {name, count} = item
+    
+            const objItem = {
+                name: name,
+                count: count
+            }
+    
+            cart.push(objItem)
+        })
+
+        formValues.cart = cart
+        document.forms.order.reset()
+        localStorage.removeItem('cart')
+        renderCartCards()
+
+        if (formValues['receiving-type'] === 'Самовывоз') {
+            delete formValues['private-house']
+            delete formValues['street']
+            delete formValues['house']
+            delete formValues['apartment']
+            delete formValues['entrance']
+            delete formValues['floor']
+        }
+    
+        if (formValues['time-receipt'] === 'Ближайшее время') {
+            delete formValues['pre-order-time']
+        }
+    
+        console.log(formValues);
+
+    } else {
+        showNotification('В вашей корзине нет товаров.', '#ff6800')
+    }
+
+    
+}
 
 

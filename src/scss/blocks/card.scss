@@ -1,4 +1,5 @@
 .card {
+    cursor: pointer;
     width: 11rem;
     min-height: fit-content;
     max-height: max-content;
@@ -17,10 +18,8 @@
     img {
         justify-self: center;
         align-self: center;
-        pointer-events: none;
         max-width: 100%;
         max-height: 100%;
-        
     }
     button {
         pointer-events: all;
@@ -30,17 +29,14 @@
     }
 }
 .card__middle {
-    pointer-events: none;
     justify-self: flex-start;
     margin: 5px 0 0;
     .card__name {
-        pointer-events: none;
         font-size: 1rem;
         margin: 0;
     }
 
     .card__desc {
-        pointer-events: none;
         color: $grey-text;
         font-size: .8rem;
     }
@@ -53,17 +49,7 @@
     justify-content: space-between;
     align-items: flex-end;
     .card__price {
-        pointer-events: none;
         font-weight: 500;
-    }
-    .add-cart__btn {
-        
-        display: flex;
-        align-items: end;
-
-        svg {
-            pointer-events: none;
-        }
     }
 }
 
