@@ -13,8 +13,8 @@ const productImg = product.querySelector('.product__img'),
       productCountPlus = productCountWrapper.querySelector('.product__plus'),
       productCountMinus = productCountWrapper.querySelector('.product__minus'),
       productCount = productCountWrapper.querySelector('.product__count'),
-      productRadioWrapper = product.querySelector('.product__radio')
-
+      productRadioWrapper = product.querySelector('.product__radio'),
+      productRadioInputs = productRadioWrapper.querySelectorAll('[name="product-radio"]')
 
 const cardsContainers = {}
 document.querySelectorAll('[data-cards]').forEach(container => {
@@ -26,12 +26,24 @@ Object.values(cardsContainers).forEach(container => {
     container.addEventListener('click', e => {
         const card = e.target.closest('[data-card]')
 
-        if (!card || e.target.closest('.add-cart__btn, .feature-btn, .product__counter')) return
+        if (!card || e.target.closest('.add-cart__btn, .feature-btn, .product__counter, .product__radio')) return
 
         const cardId = card.getAttribute('data-card')
 
         const local = JSON.parse(localStorage?.getItem('cart'))
         let count = local[cardId] ? local[cardId].count : 1
+        let radioValue = local[cardId] ? local[cardId].radioValue : null
+
+        if (radioValue) {
+            productRadioInputs.forEach(input => {
+                if (input.value === radioValue) {
+                    input.checked = true
+                } else {
+                    input.checked = false
+                }
+            })
+            
+        }
 
         axios.get('http://localhost:3000/products')
             .then(data => {
@@ -49,7 +61,7 @@ Object.values(cardsContainers).forEach(container => {
                         productCountMinus.setAttribute('data-minus', cardId)
                         productCount.setAttribute('data-count', cardId)
 
-                        if (item.radio) {
+                        if (item.category === 'pizza') {
                             productRadioWrapper.classList.remove('hide')
                         } else {
                             productRadioWrapper.classList.add('hide')

@@ -33,6 +33,7 @@
                 z-index: 1;
                 position: absolute;
                 transition: all 1s;
+                transform: translateX(0%);
             }
         }
         span {
@@ -47,6 +48,7 @@
             transition: all .5s;
             font-size: 24px;
             font-weight: 500;
+            transform: translateX(0%);
         }
 
         &_active {

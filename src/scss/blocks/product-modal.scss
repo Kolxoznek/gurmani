@@ -42,7 +42,9 @@
                 margin-bottom: 20px;
         
                 .product__additionally {
-                    
+                    display: flex;
+                    gap: 10px;
+                    align-items: center;
                     .product__radio {
         
                     }

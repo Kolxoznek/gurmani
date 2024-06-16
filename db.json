@@ -1,96 +1,742 @@
 {
   "products": [
     {
-      "id": "88c3",
+      "id": "dae1",
       "name": "Мини сет",
       "card-descr": "24шт/600гр",
       "descr": "",
       "price": 810,
-      "img": "/images/Ð¼Ð¸Ð½Ð¸ 585Ñ_385.png",
+      "img": "/images/Мини сет.png",
       "category": "sushi-sets"
     },
     {
-      "id": "8fef",
-      "name": "Запеченый сет",
-      "card-descr": "24шт/800гр",
-      "descr": "",
-      "price": 995,
-      "img": "/images/Ð·Ð°Ð¿ÐµÑ_ÐµÐ½Ñ_Ð¹ 585Ñ_385.png",
-      "category": "sushi-sets"
-    },
-    {
-      "id": "7a25",
+      "id": "d665",
       "name": "Сет три цезаря",
       "card-descr": "24шт/750гр",
       "descr": "",
       "price": 926,
-      "img": "/images/3 Ñ_ÐµÐ·Ð°Ñ_Ñ_ 585Ñ_385.png",
+      "img": "/images/Сет три Цезаря.png",
       "category": "sushi-sets"
     },
     {
-      "id": "5b2a",
+      "id": "c9d7",
       "name": "Сет для двоих",
       "card-descr": "32шт/750гр",
       "descr": "",
       "price": 950,
-      "img": "/images/Ñ_ÐµÑ_ Ð´Ð»Ñ_ Ð´Ð²Ð¾Ð¸Ñ_ 585Ñ_385(1).png",
+      "img": "/images/Сет для двоих.png",
       "category": "sushi-sets"
     },
     {
-      "id": "109e",
-      "name": "Сет вулкан мини",
-      "card-descr": "16шт/550гр",
-      "descr": "",
-      "price": 770,
-      "img": "/images/Ð²Ñ_Ð»ÐºÐ°Ð½ Ð¼Ð¸Ð½Ð¸ 585Ñ_385.png",
-      "category": "sushi-sets"
-    },
-    {
-      "id": "cce2",
+      "id": "e5a9",
       "name": "Филадельфия сет",
       "card-descr": "24шт/750гр",
       "descr": "",
       "price": 1250,
-      "img": "/images/Ñ_Ð¸Ð»Ð° 585Ñ_385.png",
+      "img": "/images/Филадельфия сет.png",
       "category": "sushi-sets",
       "popular": true
     },
     {
-      "id": "5dd3",
-      "name": "Пеперони",
+      "id": "26cb",
+      "name": "Запеченый сет",
+      "card-descr": "24шт/800гр",
+      "descr": "",
+      "price": 995,
+      "img": "/images/Запеченый сет.png",
+      "category": "sushi-sets"
+    },
+    {
+      "id": "8261",
+      "name": "Сет вулкан мини",
+      "card-descr": "16шт/550гр",
+      "descr": "",
+      "price": 770,
+      "img": "/images/Сет вулкан мини.png",
+      "category": "sushi-sets"
+    },
+    {
+      "id": "8038",
+      "name": "Темпура сет",
+      "card-descr": "32шт/900гр",
+      "descr": "",
+      "price": 1334,
+      "img": "/images/Темпура сет.png",
+      "category": "sushi-sets",
+      "popular": false
+    },
+    {
+      "id": "8133",
+      "name": "Сет для одного",
+      "card-descr": "16шт/350гр",
+      "descr": "",
+      "price": 475,
+      "img": "/images/Сет для одного.png",
+      "category": "sushi-sets",
+      "popular": false
+    },
+    {
+      "id": "5664",
+      "name": "Маки сет",
+      "card-descr": "48шт/700гр",
+      "descr": "",
+      "price": 870,
+      "img": "/images/Маки сет.png",
+      "category": "sushi-sets",
+      "popular": false
+    },
+    {
+      "id": "c00d",
+      "name": "Горячий сет",
+      "card-descr": "32шт/1000гр",
+      "descr": "",
+      "price": 1334,
+      "img": "/images/Горячий сет.png",
+      "category": "sushi-sets",
+      "popular": false
+    },
+    {
+      "id": "1e3b",
+      "name": "Гункан сет",
       "card-descr": "",
       "descr": "",
-      "price": 450,
-      "img": "/images/(4Ñ_ÐµÐ·Ð¾Ð½Ð°)890Ñ_748.png",
+      "price": 590,
+      "img": "/images/Гункан сет.png",
+      "category": "sushi-sets",
+      "popular": false
+    },
+    {
+      "id": "7bec",
+      "name": "Вулкан сет",
+      "card-descr": "32шт/1100гр",
+      "descr": "",
+      "price": 1492,
+      "img": "/images/Вулкан сет.png",
+      "category": "sushi-sets",
+      "popular": false
+    },
+    {
+      "id": "394c",
+      "name": "Калифорния сет",
+      "card-descr": "32шт/850гр",
+      "descr": "",
+      "price": 1280,
+      "img": "/images/Калифорния сет.png",
+      "category": "sushi-sets",
+      "popular": false
+    },
+    {
+      "id": "d2a4",
+      "name": "Фудзи сет",
+      "card-descr": "56шт/1300гр",
+      "descr": "",
+      "price": 1827,
+      "img": "/images/Фудзи сет.png",
+      "category": "sushi-sets",
+      "popular": false
+    },
+    {
+      "id": "76da",
+      "name": "Токио сет",
+      "card-descr": "32шт/1050гр",
+      "descr": "",
+      "price": 1517,
+      "img": "/images/Токио сет.png",
+      "category": "sushi-sets",
+      "popular": false
+    },
+    {
+      "id": "712a",
+      "name": "Самурай сет",
+      "card-descr": "48шт/1200гр",
+      "descr": "",
+      "price": 1817,
+      "img": "/images/Самурай сет.png",
+      "category": "sushi-sets",
+      "popular": false
+    },
+    {
+      "id": "3c0b",
+      "name": "Туна сет",
+      "card-descr": "32шт/1100гр",
+      "descr": "",
+      "price": 1595,
+      "img": "/images/Туна сет.png",
+      "category": "sushi-sets",
+      "popular": false
+    },
+    {
+      "id": "7c38",
+      "name": "Гурмани сет",
+      "card-descr": "64шт/2100гр",
+      "descr": "",
+      "price": 2786,
+      "img": "/images/Гурмани сет.png",
+      "category": "sushi-sets",
+      "popular": false
+    },
+    {
+      "id": "ffdf",
+      "name": "Пеперони",
+      "card-descr": "+ соус в подарок",
+      "descr": "",
+      "price": 367,
+      "img": "/images/Пепперони.png",
       "category": "pizza",
-      "radio": [
-        "25 см",
-        "30 см"
-      ],
       "popular": true
     },
     {
-      "id": "321c",
+      "id": "81ba",
+      "name": "Мясная",
+      "card-descr": "+ соус в подарок",
+      "descr": "",
+      "price": 371,
+      "img": "/images/Мясная.png",
+      "category": "pizza",
+      "popular": false
+    },
+    {
+      "id": "41d7",
+      "name": "Тропикана",
+      "card-descr": "+ соус в подарок",
+      "descr": "",
+      "price": 355,
+      "img": "/images/Тропикана.png",
+      "category": "pizza",
+      "popular": false
+    },
+    {
+      "id": "d49b",
+      "name": "Гурмани",
+      "card-descr": "+ соус в подарок",
+      "descr": "",
+      "price": 365,
+      "img": "/images/Гурмани.png",
+      "category": "pizza",
+      "popular": false
+    },
+    {
+      "id": "7c7a",
+      "name": "Маргарита",
+      "card-descr": "+ соус в подарок",
+      "descr": "",
+      "price": 305,
+      "img": "/images/Маргарита.png",
+      "category": "pizza",
+      "popular": false
+    },
+    {
+      "id": "e237",
+      "name": "Маргарита",
+      "card-descr": "+ соус в подарок",
+      "descr": "",
+      "price": 305,
+      "img": "/images/Маргарита.png",
+      "category": "pizza",
+      "popular": false
+    },
+    {
+      "id": "b5b0",
+      "name": "Супер острая",
+      "card-descr": "+ соус в подарок",
+      "descr": "",
+      "price": 360,
+      "img": "/images/Супер острая.png",
+      "category": "pizza",
+      "popular": false
+    },
+    {
+      "id": "6f86",
+      "name": "Цыпленок барбекью",
+      "card-descr": "+ соус в подарок",
+      "descr": "",
+      "price": 355,
+      "img": "/images/Цыпленок барбекью.png",
+      "category": "pizza",
+      "popular": false
+    },
+    {
+      "id": "c491",
+      "name": "Домашняя",
+      "card-descr": "+ соус в подарок",
+      "descr": "",
+      "price": 367,
+      "img": "/images/Домашняя.png",
+      "category": "pizza",
+      "popular": false
+    },
+    {
+      "id": "4f2b",
+      "name": "Капричиоза",
+      "card-descr": "+ соус в подарок",
+      "descr": "",
+      "price": 355,
+      "img": "/images/Капричиоза.png",
+      "category": "pizza",
+      "popular": false
+    },
+    {
+      "id": "61b5",
+      "name": "Детская",
+      "card-descr": "+ соус в подарок",
+      "descr": "",
+      "price": 340,
+      "img": "/images/Детская.png",
+      "category": "pizza",
+      "popular": false
+    },
+    {
+      "id": "396d",
+      "name": "Сырный цыпленок",
+      "card-descr": "+ соус в подарок",
+      "descr": "",
+      "price": 377,
+      "img": "/images/Сырный цыпленок.png",
+      "category": "pizza",
+      "popular": false
+    },
+    {
+      "id": "cc01",
+      "name": "Римская",
+      "card-descr": "+ соус в подарок",
+      "descr": "",
+      "price": 350,
+      "img": "/images/Римская.png",
+      "category": "pizza",
+      "popular": false
+    },
+    {
+      "id": "ad15",
+      "name": "Пепперони фреш",
+      "card-descr": "+ соус в подарок",
+      "descr": "",
+      "price": 342,
+      "img": "/images/Пепперони фреш.png",
+      "category": "pizza",
+      "popular": false
+    },
+    {
+      "id": "79c0",
+      "name": "Чизбургер",
+      "card-descr": "+ соус в подарок",
+      "descr": "",
+      "price": 392,
+      "img": "/images/Чизбургер.png",
+      "category": "pizza",
+      "popular": false
+    },
+    {
+      "id": "a30f",
+      "name": "4 сыра",
+      "card-descr": "+ соус в подарок",
+      "descr": "",
+      "price": 384,
+      "img": "/images/4 сыра.png",
+      "category": "pizza",
+      "popular": false
+    },
+    {
+      "id": "5b7a",
+      "name": "Азия",
+      "card-descr": "+ соус в подарок",
+      "descr": "",
+      "price": 440,
+      "img": "/images/Азия.png",
+      "category": "pizza",
+      "popular": false
+    },
+    {
+      "id": "e196",
+      "name": "4 сезона",
+      "card-descr": "+ соус в подарок",
+      "descr": "",
+      "price": 365,
+      "img": "/images/4 сезона.png",
+      "category": "pizza",
+      "popular": false
+    },
+    {
+      "id": "20c9",
+      "name": "Гавайская",
+      "card-descr": "+ соус в подарок",
+      "descr": "",
+      "price": 370,
+      "img": "/images/Гавайская.png",
+      "category": "pizza",
+      "popular": false
+    },
+    {
+      "id": "c925",
+      "name": "Цезарь",
+      "card-descr": "+ соус в подарок",
+      "descr": "",
+      "price": 430,
+      "img": "/images/Цезарь.png",
+      "category": "pizza",
+      "popular": false
+    },
+    {
+      "id": "ccc7",
       "name": "Филадельфия с лососем",
-      "card-descr": "",
+      "card-descr": "8шт/250гр",
       "descr": "Лосось, огурец, сливочный сыр, рис",
       "price": 384,
-      "img": "/images/DSC03109  max.png",
+      "img": "/images/Филадельфия с лососем.png",
       "category": "cold-rolls",
       "popular": true
     },
     {
-      "id": "1a79",
+      "id": "b604",
+      "name": "Сливочный с угрем",
+      "card-descr": "8шт/200гр",
+      "descr": "",
+      "price": 257,
+      "img": "/images/Сливочный с угрем.png",
+      "category": "cold-rolls",
+      "popular": false
+    },
+    {
+      "id": "5a9d",
+      "name": "Калифорния вакаме",
+      "card-descr": "8шт/250гр",
+      "descr": "",
+      "price": 340,
+      "img": "/images/Калифорния вакаме.png",
+      "category": "cold-rolls",
+      "popular": false
+    },
+    {
+      "id": "bc55",
+      "name": "Чикен тортилья маки",
+      "card-descr": "8шт/250гр",
+      "descr": "",
+      "price": 334,
+      "img": "/images/Чикен тортилья маки.png",
+      "category": "cold-rolls",
+      "popular": false
+    },
+    {
+      "id": "67d0",
+      "name": "Туна",
+      "card-descr": "8шт/250гр",
+      "descr": "",
+      "price": 310,
+      "img": "/images/Туна.png",
+      "category": "cold-rolls",
+      "popular": false
+    },
+    {
+      "id": "9f0d",
+      "name": "Сливочный с авокадо",
+      "card-descr": "8шт/200гр",
+      "descr": "",
+      "price": 185,
+      "img": "/images/Сливочный с авокадо.png",
+      "category": "cold-rolls",
+      "popular": false
+    },
+    {
+      "id": "aa60",
+      "name": "Чиз ролл",
+      "card-descr": "8шт/250гр",
+      "descr": "",
+      "price": 340,
+      "img": "/images/Чиз ролл.png",
+      "category": "cold-rolls",
+      "popular": false
+    },
+    {
+      "id": "4e38",
+      "name": "Калифорния с крабом",
+      "card-descr": "8шт/250гр",
+      "descr": "",
+      "price": 326,
+      "img": "/images/Калифорния с крабом.png",
+      "category": "cold-rolls",
+      "popular": false
+    },
+    {
+      "id": "73ab",
+      "name": "Сливочный с курицей",
+      "card-descr": "8шт/200гр",
+      "descr": "",
+      "price": 200,
+      "img": "/images/Сливочный с курицей.png",
+      "category": "cold-rolls",
+      "popular": false
+    },
+    {
+      "id": "2860",
+      "name": "Сяке тортилья маки",
+      "card-descr": "8шт/200гр",
+      "descr": "",
+      "price": 376,
+      "img": "/images/Сяке тортилья маки.png",
+      "category": "cold-rolls",
+      "popular": false
+    },
+    {
+      "id": "6f2a",
+      "name": "Филадельфия с тунцом",
+      "card-descr": "8шт/250гр",
+      "descr": "",
+      "price": 345,
+      "img": "/images/Филадельфия с тунцом.png",
+      "category": "cold-rolls",
+      "popular": false
+    },
+    {
+      "id": "ed81",
+      "name": "Сливочный с лососем",
+      "card-descr": "8шт/200гр",
+      "descr": "",
+      "price": 255,
+      "img": "/images/Сливочный с лососем.png",
+      "category": "cold-rolls",
+      "popular": false
+    },
+    {
+      "id": "0d92",
+      "name": "Эби кунсей",
+      "card-descr": "8шт/250гр",
+      "descr": "",
+      "price": 370,
+      "img": "/images/Эби кунсей.png",
+      "category": "cold-rolls",
+      "popular": false
+    },
+    {
+      "id": "f5d9",
+      "name": "Ролл с беконом",
+      "card-descr": "8шт/250гр",
+      "descr": "",
+      "price": 304,
+      "img": "/images/Ролл с беконом.png",
+      "category": "cold-rolls",
+      "popular": false
+    },
+    {
+      "id": "f44d",
+      "name": "Бонито с лососем",
+      "card-descr": "8шт/250гр",
+      "descr": "",
+      "price": 367,
+      "img": "/images/Бонито с лососем.png",
+      "category": "cold-rolls",
+      "popular": false
+    },
+    {
+      "id": "8651",
+      "name": "Сливочный с тунцом",
+      "card-descr": "8шт/200гр",
+      "descr": "",
+      "price": 225,
+      "img": "/images/Сливочный с тунцом.png",
+      "category": "cold-rolls",
+      "popular": false
+    },
+    {
+      "id": "226a",
+      "name": "Дабл Фиш",
+      "card-descr": "8шт/250гр",
+      "descr": "",
+      "price": 207,
+      "img": "/images/Дабл Фиш.png",
+      "category": "cold-rolls",
+      "popular": false
+    },
+    {
+      "id": "8959",
+      "name": "Бонито с курицей",
+      "card-descr": "8шт/250гр",
+      "descr": "",
+      "price": 334,
+      "img": "/images/Бонито с курицей.png",
+      "category": "cold-rolls",
+      "popular": false
+    },
+    {
+      "id": "731f",
+      "name": "Ролл Цезарь",
+      "card-descr": "8шт/250гр",
+      "descr": "",
+      "price": 304,
+      "img": "/images/Ролл Цезарь.png",
+      "category": "cold-rolls",
+      "popular": false
+    },
+    {
+      "id": "4ad2",
+      "name": "Бонито с тунцом",
+      "card-descr": "8шт/250гр",
+      "descr": "",
+      "price": 340,
+      "img": "/images/Бонито с тунцом.png",
+      "category": "cold-rolls",
+      "popular": false
+    },
+    {
+      "id": "a31b",
+      "name": "Сливочный лосось",
+      "card-descr": "8шт/250гр",
+      "descr": "",
+      "price": 364,
+      "img": "/images/Сливочный лосось.png",
+      "category": "cold-rolls",
+      "popular": false
+    },
+    {
+      "id": "4b66",
+      "name": "Унаги",
+      "card-descr": "8шт/250гр",
+      "descr": "",
+      "price": 375,
+      "img": "/images/Унаги.png",
+      "category": "cold-rolls",
+      "popular": false
+    },
+    {
+      "id": "1423",
+      "name": "Туна кунсей",
+      "card-descr": "8шт/250гр",
+      "descr": "",
+      "price": 380,
+      "img": "/images/Туна кунсей.png",
+      "category": "cold-rolls",
+      "popular": false
+    },
+    {
+      "id": "1221",
+      "name": "Калифорния с лососем",
+      "card-descr": "8шт/250гр",
+      "descr": "",
+      "price": 396,
+      "img": "/images/Калифорния с лососем.png",
+      "category": "cold-rolls",
+      "popular": false
+    },
+    {
+      "id": "9d7c",
       "name": "Жаренный с креветкой",
-      "card-descr": "",
+      "card-descr": "8шт / 260гр",
       "descr": "Креветка, огурец, сливочный сыр, рис, унаги, кунжут",
       "price": 394,
-      "img": "/images/Ð_Ð_Ð Ð_Ð_Ð«Ð_ Ð¡ Ð_Ð Ð_Ð_Ð_Ð¢Ð_Ð_Ð_ max.png",
+      "img": "/images/Жаренный с креветкой.png",
       "category": "fried-rolls",
       "popular": true
     },
     {
-      "id": "f3c2",
+      "id": "adf9",
+      "name": "Чикен Хот",
+      "card-descr": "8шт/220гр",
+      "descr": "",
+      "price": 284,
+      "img": "/images/Чикен Хот.png",
+      "category": "fried-rolls",
+      "popular": false
+    },
+    {
+      "id": "245d",
+      "name": "Жареный дракон",
+      "card-descr": "8шт/280гр",
+      "descr": "",
+      "price": 370,
+      "img": "/images/Жареный дракон.png",
+      "category": "fried-rolls",
+      "popular": false
+    },
+    {
+      "id": "21f1",
+      "name": "Теплый краб",
+      "card-descr": "8шт/250гр",
+      "descr": "",
+      "price": 335,
+      "img": "/images/Теплый краб.png",
+      "category": "fried-rolls",
+      "popular": false
+    },
+    {
+      "id": "b382",
+      "name": "Гаваи темпура",
+      "card-descr": "8шт/270гр",
+      "descr": "",
+      "price": 345,
+      "img": "/images/Гаваи темпура.png",
+      "category": "fried-rolls",
+      "popular": false
+    },
+    {
+      "id": "28e4",
+      "name": "Горячий цезарь",
+      "card-descr": "8шт/250гр",
+      "descr": "",
+      "price": 335,
+      "img": "/images/Горячий цезарь.png",
+      "category": "fried-rolls",
+      "popular": false
+    },
+    {
+      "id": "97b7",
+      "name": "Фурай",
+      "card-descr": "8шт/260гр",
+      "descr": "",
+      "price": 375,
+      "img": "/images/Фурай.png",
+      "category": "fried-rolls",
+      "popular": false
+    },
+    {
+      "id": "7312",
+      "name": "Чикен темпура",
+      "card-descr": "8шт/240гр",
+      "descr": "",
+      "price": 375,
+      "img": "/images/Чикен темпура.png",
+      "category": "fried-rolls",
+      "popular": false
+    },
+    {
+      "id": "3cb5",
+      "name": "Жаренный с курицей",
+      "card-descr": "8шт/260гр",
+      "descr": "",
+      "price": 317,
+      "img": "/images/Жаренный с курицей.png",
+      "category": "fried-rolls",
+      "popular": false
+    },
+    {
+      "id": "a83d",
+      "name": "Унаги Хот",
+      "card-descr": "8шт/220гр",
+      "descr": "",
+      "price": 327,
+      "img": "/images/Унаги Хот.png",
+      "category": "fried-rolls",
+      "popular": false
+    },
+    {
+      "id": "0004",
+      "name": "Эби темпура",
+      "card-descr": "8шт/270гр",
+      "descr": "",
+      "price": 394,
+      "img": "/images/Эби темпура.png",
+      "category": "fried-rolls",
+      "popular": false
+    },
+    {
+      "id": "369b",
+      "name": "Жаренный с тунцом",
+      "card-descr": "8шт/260гр",
+      "descr": "",
+      "price": 320,
+      "img": "/images/Жаренный с тунцом.png",
+      "category": "fried-rolls",
+      "popular": false
+    },
+    {
+      "id": "f9e4",
       "name": "Запеченная филадельфия",
       "card-descr": "",
       "descr": "Лосось, авокадо, сливочный сыр, рис, унаги, кунжут",
@@ -100,27 +746,377 @@
       "popular": true
     },
     {
-      "id": "da71",
-      "name": "Маки с лососем",
+      "id": "a660",
+      "name": "Калифорния хот",
+      "card-descr": "8шт/250гр",
+      "descr": "",
+      "price": 327,
+      "img": "/images/Калифорния хот.png",
+      "category": "baked-rolls",
+      "popular": false
+    },
+    {
+      "id": "054a",
+      "name": "Запеченный с копченым лососем",
+      "card-descr": "8шт/300гр",
+      "descr": "",
+      "price": 396,
+      "img": "/images/Запеченный с копченым лососем.png",
+      "category": "baked-rolls",
+      "popular": false
+    },
+    {
+      "id": "c8a8",
+      "name": "Чикен Чеддер",
+      "card-descr": "8шт/250гр",
+      "descr": "",
+      "price": 330,
+      "img": "/images/Чикен Чеддер.png",
+      "category": "baked-rolls",
+      "popular": false
+    },
+    {
+      "id": "952d",
+      "name": "Запеченный с крабом",
+      "card-descr": "8шт/300гр",
+      "descr": "",
+      "price": 354,
+      "img": "/images/Запеченный с крабом.png",
+      "category": "baked-rolls",
+      "popular": false
+    },
+    {
+      "id": "575a",
+      "name": "Форест",
+      "card-descr": "8шт/280гр",
+      "descr": "",
+      "price": 304,
+      "img": "/images/Форест.png",
+      "category": "baked-rolls",
+      "popular": false
+    },
+    {
+      "id": "774d",
+      "name": "Запеченный с креветкой",
+      "card-descr": "8шт/300гр",
+      "descr": "",
+      "price": 407,
+      "img": "/images/Запеченный с креветкой.png",
+      "category": "baked-rolls",
+      "popular": false
+    },
+    {
+      "id": "ec09",
+      "name": "Крейзи чикен",
+      "card-descr": "8шт/270гр",
+      "descr": "",
+      "price": 317,
+      "img": "/images/Крейзи чикен.png",
+      "category": "baked-rolls",
+      "popular": false
+    },
+    {
+      "id": "3080",
+      "name": "Запеченный с курицей",
+      "card-descr": "8шт/300гр",
+      "descr": "",
+      "price": 364,
+      "img": "/images/Запеченный с курицей.png",
+      "category": "baked-rolls",
+      "popular": false
+    },
+    {
+      "id": "6fe5",
+      "name": "Филадельфия хот",
+      "card-descr": "8шт/270гр",
+      "descr": "",
+      "price": 360,
+      "img": "/images/Филадельфия хот.png",
+      "category": "baked-rolls",
+      "popular": false
+    },
+    {
+      "id": "20d0",
+      "name": "Запеченный с лососем",
+      "card-descr": "8шт/300гр",
+      "descr": "",
+      "price": 396,
+      "img": "/images/Запеченный с лососем.png",
+      "category": "baked-rolls",
+      "popular": false
+    },
+    {
+      "id": "df01",
+      "name": "Теплый лосось",
+      "card-descr": "8шт/260гр",
+      "descr": "",
+      "price": 407,
+      "img": "/images/Теплый лосось.png",
+      "category": "baked-rolls",
+      "popular": false
+    },
+    {
+      "id": "3eff",
+      "name": "Запеченный с тунцом",
+      "card-descr": "8шт/300гр",
+      "descr": "",
+      "price": 385,
+      "img": "/images/Запеченный с тунцом.png",
+      "category": "baked-rolls",
+      "popular": false
+    },
+    {
+      "id": "3875",
+      "name": "Запечный цезарь",
+      "card-descr": "8шт/270гр",
+      "descr": "",
+      "price": 346,
+      "img": "/images/Запечный цезарь.png",
+      "category": "baked-rolls",
+      "popular": false
+    },
+    {
+      "id": "bf94",
+      "name": "Запеченный с угрем",
+      "card-descr": "8шт/300гр",
+      "descr": "",
+      "price": 396,
+      "img": "/images/Запеченный с угрем.png",
+      "category": "baked-rolls",
+      "popular": false
+    },
+    {
+      "id": "f09e",
+      "name": "Карамельная Филадельфия",
       "card-descr": "",
       "descr": "",
+      "price": 427,
+      "img": "/images/Карамельная Филадельфия.jpg",
+      "category": "baked-rolls",
+      "popular": false
+    },
+    {
+      "id": "bffd",
+      "name": "Магуро Хот",
+      "card-descr": "",
+      "descr": "",
+      "price": 370,
+      "img": "/images/Магуро Хот.png",
+      "category": "baked-rolls",
+      "popular": false
+    },
+    {
+      "id": "3ecf",
+      "name": "Маки с лососем",
+      "card-descr": "8шт/110гр",
+      "descr": "",
       "price": 196,
-      "img": "/images/МАКИ С ЛОСОСЕМ max.png",
+      "img": "/images/Маки с лососем.png",
       "category": "maki-and-sushi",
       "popular": true
     },
     {
-      "id": "6e54",
+      "id": "bc71",
+      "name": "Маки с угрем",
+      "card-descr": "8шт/110гр",
+      "descr": "",
+      "price": 221,
+      "img": "/images/Маки с угрем.png",
+      "category": "maki-and-sushi",
+      "popular": false
+    },
+    {
+      "id": "2968",
+      "name": "Суши с угрем",
+      "card-descr": "1шт/45гр",
+      "descr": "",
+      "price": 136,
+      "img": "/images/Суши с угрем.png",
+      "category": "maki-and-sushi",
+      "popular": false
+    },
+    {
+      "id": "2243",
+      "name": "Маки с тунцом",
+      "card-descr": "8шт/110гр",
+      "descr": "",
+      "price": 185,
+      "img": "/images/Маки с тунцом.png",
+      "category": "maki-and-sushi",
+      "popular": false
+    },
+    {
+      "id": "ddf6",
+      "name": "Маки с креветкой",
+      "card-descr": "8шт/110гр",
+      "descr": "",
+      "price": 190,
+      "img": "/images/Маки с креветкой.png",
+      "category": "maki-and-sushi",
+      "popular": false
+    },
+    {
+      "id": "5a0f",
+      "name": "Суши с тунцом",
+      "card-descr": "1шт/45гр",
+      "descr": "",
+      "price": 124,
+      "img": "/images/Суши с тунцом.png",
+      "category": "maki-and-sushi",
+      "popular": false
+    },
+    {
+      "id": "0179",
+      "name": "Запечный гункан с креветкой",
+      "card-descr": "3шт/150гр",
+      "descr": "",
+      "price": 350,
+      "img": "/images/Запечный гункан с креветкой.png",
+      "category": "maki-and-sushi",
+      "popular": false
+    },
+    {
+      "id": "a97f",
+      "name": "Маки с авокадо",
+      "card-descr": "8шт/110гр",
+      "descr": "",
+      "price": 125,
+      "img": "/images/Маки с авокадо.png",
+      "category": "maki-and-sushi",
+      "popular": false
+    },
+    {
+      "id": "2bbc",
+      "name": "Маки с огурцом",
+      "card-descr": "8шт/110гр",
+      "descr": "",
+      "price": 115,
+      "img": "/images/Маки с огурцом.png",
+      "category": "maki-and-sushi",
+      "popular": false
+    },
+    {
+      "id": "11eb",
+      "name": "Гункан с лососем",
+      "card-descr": "3шт/150гр",
+      "descr": "",
+      "price": 340,
+      "img": "/images/Гункан с лососем.png",
+      "category": "maki-and-sushi",
+      "popular": false
+    },
+    {
+      "id": "0ebe",
+      "name": "Запечный гункан с лососем",
+      "card-descr": "3шт/150гр",
+      "descr": "",
+      "price": 350,
+      "img": "/images/Запечный гункан с лососем.png",
+      "category": "maki-and-sushi",
+      "popular": false
+    },
+    {
+      "id": "287a",
+      "name": "Маки с чукой",
+      "card-descr": "8шт/110гр",
+      "descr": "",
+      "price": 125,
+      "img": "/images/Маки с чукой.png",
+      "category": "maki-and-sushi",
+      "popular": false
+    },
+    {
+      "id": "afea",
+      "name": "Суши с лососем",
+      "card-descr": "1шт/45гр",
+      "descr": "",
+      "price": 124,
+      "img": "/images/Суши с лососем.png",
+      "category": "maki-and-sushi",
+      "popular": false
+    },
+    {
+      "id": "8fff",
+      "name": "Запечный гункан с тунцом",
+      "card-descr": "3шт/150гр",
+      "descr": "",
+      "price": 350,
+      "img": "/images/Запечный гункан с тунцом.png",
+      "category": "maki-and-sushi",
+      "popular": false
+    },
+    {
+      "id": "c739",
+      "name": "Гункан с тунцом",
+      "card-descr": "3шт/150гр",
+      "descr": "",
+      "price": 340,
+      "img": "/images/Гункан с тунцом.png",
+      "category": "maki-and-sushi",
+      "popular": false
+    },
+    {
+      "id": "ceee",
+      "name": "Гункан с креветкой",
+      "card-descr": "3шт/150гр",
+      "descr": "",
+      "price": 340,
+      "img": "/images/Гункан с креветкой.png",
+      "category": "maki-and-sushi",
+      "popular": false
+    },
+    {
+      "id": "1851",
       "name": "Поке с креветками",
       "card-descr": "",
       "descr": "Креветки, авокадо, огурец, чука, черри, красный лук, рис, ореховый соус, тобико, зеленый лук, кунжут",
       "price": 450,
-      "img": "/images/photo_2023-11-27 10.45.27.jpeg",
+      "img": "/images/Поке с креветками.jpeg",
       "category": "salads-and-poke",
       "popular": true
     },
     {
-      "id": "f7e3",
+      "id": "b8e8",
+      "name": "Поке с лососем",
+      "card-descr": "",
+      "descr": "",
+      "price": 445,
+      "img": "/images/Поке с лососем.jpeg",
+      "category": "salads-and-poke",
+      "popular": false
+    },
+    {
+      "id": "1b70",
+      "name": "Поке с тунцом",
+      "card-descr": "",
+      "descr": "",
+      "price": 447,
+      "img": "/images/Поке с тунцом.jpeg",
+      "category": "salads-and-poke",
+      "popular": false
+    },
+    {
+      "id": "e317",
+      "name": "Салат Цезарь с креветками",
+      "card-descr": "",
+      "descr": "",
+      "price": 317,
+      "img": "/images/Салат Цезарь с креветками.jpeg",
+      "category": "salads-and-poke",
+      "popular": false
+    },
+    {
+      "id": "7237",
+      "name": "Салат Цезарь с курицей",
+      "card-descr": "",
+      "descr": "",
+      "price": 257,
+      "img": "/images/Салат Цезарь с курицей.jpeg",
+      "category": "salads-and-poke",
+      "popular": false
+    },
+    {
+      "id": "ac09",
       "name": "WOK с овощами гречневая",
       "card-descr": "",
       "descr": "Шампиньоны, болгарский перец, красный лук, морковь, устричный соус, лапша на выбор, зеленый лук, кунжут",
@@ -130,17 +1126,157 @@
       "popular": true
     },
     {
-      "id": "e9c1",
+      "id": "c9fb",
+      "name": "WOK с овощами пшеничная",
+      "card-descr": "",
+      "descr": "",
+      "price": 280,
+      "img": "/images/WOK с овощами пшеничная.jpg",
+      "category": "hot-dishes",
+      "popular": false
+    },
+    {
+      "id": "fd35",
+      "name": "WOK с овощами яичная",
+      "card-descr": "",
+      "descr": "",
+      "price": 280,
+      "img": "/images/WOK с овощами яичная.jpg",
+      "category": "hot-dishes",
+      "popular": false
+    },
+    {
+      "id": "13c8",
+      "name": "WOK с курицей гречневая",
+      "card-descr": "",
+      "descr": "",
+      "price": 310,
+      "img": "/images/WOK с курицей гречневая.jpg",
+      "category": "hot-dishes",
+      "popular": false
+    },
+    {
+      "id": "37e9",
+      "name": "WOK с курицей пшеничная",
+      "card-descr": "",
+      "descr": "",
+      "price": 310,
+      "img": "/images/WOK с курицей пшеничная.jpg",
+      "category": "hot-dishes",
+      "popular": false
+    },
+    {
+      "id": "6f4e",
+      "name": "WOK с курицей яичная",
+      "card-descr": "",
+      "descr": "",
+      "price": 310,
+      "img": "/images/WOK с курицей яичная.jpg",
+      "category": "hot-dishes",
+      "popular": false
+    },
+    {
+      "id": "d0d9",
+      "name": "WOK с морепродуктами гречневая",
+      "card-descr": "",
+      "descr": "",
+      "price": 390,
+      "img": "/images/WOK с морепродуктами гречневая.jpg",
+      "category": "hot-dishes",
+      "popular": false
+    },
+    {
+      "id": "96ff",
+      "name": "WOK с морепродуктами пшеничная",
+      "card-descr": "",
+      "descr": "",
+      "price": 390,
+      "img": "/images/WOK с морепродуктами пшеничная.jpg",
+      "category": "hot-dishes",
+      "popular": false
+    },
+    {
+      "id": "33e3",
+      "name": "WOK с морепродуктами яичная",
+      "card-descr": "",
+      "descr": "",
+      "price": 390,
+      "img": "/images/WOK с морепродуктами яичная.jpg",
+      "category": "hot-dishes",
+      "popular": false
+    },
+    {
+      "id": "7a1d",
+      "name": "Мисо суп с лососем",
+      "card-descr": "",
+      "descr": "",
+      "price": 304,
+      "img": "/images/Мисо суп с лососем.jpg",
+      "category": "hot-dishes",
+      "popular": false
+    },
+    {
+      "id": "02d9",
+      "name": "Том Ям",
+      "card-descr": "",
+      "descr": "",
+      "price": 360,
+      "img": "/images/Том Ям.jpg",
+      "category": "hot-dishes",
+      "popular": false
+    },
+    {
+      "id": "09e7",
+      "name": "Том Кха",
+      "card-descr": "",
+      "descr": "",
+      "price": 315,
+      "img": "/images/Том Кха.jpg",
+      "category": "hot-dishes",
+      "popular": false
+    },
+    {
+      "id": "c1b0",
       "name": "Картофель по-деревенски",
       "card-descr": "",
       "descr": "",
       "price": 170,
-      "img": "/images/photo_2023-11-27 10.53.15.jpeg",
+      "img": "/images/Картофель по-деревенски.jpeg",
       "category": "hot-appetizers",
       "popular": true
     },
     {
-      "id": "9346",
+      "id": "abab",
+      "name": "Картофель фри",
+      "card-descr": "",
+      "descr": "",
+      "price": 160,
+      "img": "/images/Картофель фри.jpeg",
+      "category": "hot-appetizers",
+      "popular": false
+    },
+    {
+      "id": "7903",
+      "name": "Наггетсы 14 шт.",
+      "card-descr": "",
+      "descr": "",
+      "price": 310,
+      "img": "/images/Наггетсы 14 шт..jpeg",
+      "category": "hot-appetizers",
+      "popular": false
+    },
+    {
+      "id": "9267",
+      "name": "Наггетсы 7 шт.",
+      "card-descr": "",
+      "descr": "",
+      "price": 170,
+      "img": "/images/Наггетсы 7 шт..jpeg",
+      "category": "hot-appetizers",
+      "popular": false
+    },
+    {
+      "id": "9fb6",
       "name": "Соевый соус",
       "card-descr": "",
       "descr": "",
@@ -148,6 +1284,76 @@
       "img": "/images/Соевый соус.jpg",
       "category": "sauce",
       "popular": true
+    },
+    {
+      "id": "8b7d",
+      "name": "Соус сырный",
+      "card-descr": "",
+      "descr": "",
+      "price": 35,
+      "img": "/images/Соус сырный.jpg",
+      "category": "sauce",
+      "popular": false
+    },
+    {
+      "id": "991d",
+      "name": "Соус Спайс",
+      "card-descr": "",
+      "descr": "",
+      "price": 40,
+      "img": "/images/Соус Спайс.jpg",
+      "category": "sauce",
+      "popular": false
+    },
+    {
+      "id": "f5f8",
+      "name": "Соус Унаги",
+      "card-descr": "",
+      "descr": "",
+      "price": 40,
+      "img": "/images/Соус Унаги.jpg",
+      "category": "sauce",
+      "popular": false
+    },
+    {
+      "id": "b93d",
+      "name": "Соус Цезарь",
+      "card-descr": "",
+      "descr": "",
+      "price": 35,
+      "img": "/images/Соус Цезарь.jpg",
+      "category": "sauce",
+      "popular": false
+    },
+    {
+      "id": "fc78",
+      "name": "Соус Барбекью",
+      "card-descr": "",
+      "descr": "",
+      "price": 35,
+      "img": "/images/Соус Барбекью.jpg",
+      "category": "sauce",
+      "popular": false
+    },
+    {
+      "id": "d891",
+      "name": "Имбирь",
+      "card-descr": "",
+      "descr": "",
+      "price": 20,
+      "img": "/images/Имбирь.jpg",
+      "category": "sauce",
+      "popular": false
+    },
+    {
+      "id": "fcc9",
+      "name": "Васаби",
+      "card-descr": "",
+      "descr": "",
+      "price": 10,
+      "img": "/images/Васаби.jpg",
+      "category": "sauce",
+      "popular": false
     }
   ]
 }

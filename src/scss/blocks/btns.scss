@@ -106,6 +106,7 @@
     border-radius: 10px;
     width: 60%;
     transition: all .5s;
+    margin-right: 10px;
     
     div {
         height: 3rem;
@@ -155,20 +156,39 @@
     }
 }
 
-input[type="radio"] + label {
-    display: inline-block;
-    cursor: pointer;
-    padding: 5px 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.product__radio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    input[type="radio"] {
+        display: none;
+        
+    }
+    
+    input[type="radio"] + label {
+        display: inline-block;
+        height: 32px;
+        border-radius: 10px;
+        padding-inline: 10px;
+        line-height: 32px;
+        transition: all .5s;
+    }
+
+    input[type="radio"] + label:hover {
+        background: $hover-btn-color;
+        border-radius: 10px;
+        color: #fff;
+    }
+
+    /* Стили для активных радио-кнопок */
+    input[type="radio"]:checked + label {
+        background-color: $accent;
+        color: #fff;
+        border-color: $accent;
+    }
 }
 
-/* Стили для активных радио-кнопок */
-input[type="radio"]:checked + label {
-    background-color: $accent;
-    color: #fff;
-    border-color: $accent;
-}
 
 .cart-btn {
     display: flex;

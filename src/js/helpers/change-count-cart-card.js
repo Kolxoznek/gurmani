@@ -5,23 +5,24 @@ import { hideCardCounter } from "./show-hide-card-counter"
 
 
 function changeCountCartCard(attr, n = 1) {
-    const obj = JSON.parse(localStorage?.getItem('cart'))[attr]
+    const localCart = JSON.parse(localStorage.getItem('cart'))
+    const obj = localCart[attr]
 
     let count = obj?.count
 
     if (count) {
         let changedCount = +count + n
     
-        console.log(changedCount)
         if (changedCount === 0) {
             deleteCartProduct(attr)
             renderCartCards()
             hideCardCounter(attr)
     
         } else if (changedCount > 10) {
-            addCartProduct(attr, 10)
+            return
         } else {
-            addCartProduct(attr, changedCount)
+            localCart[attr].count = changedCount
+            localStorage.setItem('cart', (JSON.stringify(localCart)))
             changePriceCartCard(attr, changedCount)
         }
     } else {

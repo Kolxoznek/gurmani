@@ -15,6 +15,17 @@ function renderCartCards() {
     }
     
     arrProducts.forEach(product => {
+
+        let price = 0
+
+        if (product.radioValue === '25см') {
+            price = product.price * product.count
+        } else if (product.radioValue === '30см') {
+            price = Math.floor(product.price * product.count * 1.25)
+        } else {
+            price = product.price * product.count
+        }
+
         const element = document.createElement('article')
         element.classList.add('cart-card')
         element.setAttribute('data-card', `${product.id}`)
@@ -27,17 +38,14 @@ function renderCartCards() {
                     ${product.name}
                 </h3>
                 <span class="card__price">
-                    ${product.price * product.count}
+                    ${price}
                 </span>
-                <div class="product__radio hide">
-                    <div class="product__radio-item">
-                        <input type="radio" class="product__radio-input">
-                        <label>25 см</label>
-                    </div>
-                    <div class="product__radio-item">
-                        <input type="radio" class="product__radio-input">
-                        <label>30 см</label>
-                    </div>
+                <div class="product__radio${product.radioValue ? '' : ' hide'}">
+                    <input type="radio" id="card-${product.id}-size-25cm" name="card-${product.id}-product-radio" value="25см">
+                    <label for="card-${product.id}-size-25cm">25 см</label>
+
+                    <input type="radio" id="card-${product.id}-size-30cm" name="card-${product.id}-product-radio" value="30см">
+                    <label for="card-${product.id}-size-30cm">30 см</label>
                 </div>
             </div>
             <div class="product__counter">
@@ -50,12 +58,10 @@ function renderCartCards() {
                 </button>
             </div>
         `
-        containerItems.append(element)
+        const checkedRadio = element.querySelector(`input[value="${product.radioValue}"]`)
+        checkedRadio ? checkedRadio.checked = true : undefined
 
-        
-        /* if(!card.radio) {
-            element.querySelector('product__radio').classList.add('hide')
-        } */
+        containerItems.append(element)
     })
             
         

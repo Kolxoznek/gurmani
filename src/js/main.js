@@ -15,7 +15,7 @@ import toggleFavoriteCard from './helpers/toggle-favorite-card.js'
 import {showCardCounter} from './helpers/show-hide-card-counter.js'
 import changeCountProductPopup from './helpers/change-count-product-popup.js'
 import { renderCartCards } from './blocks/render-cart-cards.js'
-
+import calculateProductPopupPrice from './helpers/calculate-product-popup-price.js'
 
 // вычисление суммы товаров в корзине
 calculateTotalPrice()
@@ -27,6 +27,7 @@ renderCategoryCards('popular', true, 'recomend')
 
 // рендер товаров в избранном если они были добавлены в прошлых посещениях на сайт
 renderCardsFromIdArray(JSON.parse(localStorage.getItem('favorite')) || [], 'favorite')
+
 
 
 // добавление товаров в избранное или корзину по клику на кнопки
@@ -48,16 +49,21 @@ document.addEventListener('click', e => {
         // кнопка в попапе товара
         if (target.classList.contains('product__button')) {
             const count = +document.querySelector('.product .product__count').textContent
-            addCartProduct(target.getAttribute('data-buy-product'), count)
+            const radioWrapper = document.querySelector('.product__additionally .product__radio')
+            
+            if (radioWrapper.classList.contains('hide')) {
+                addCartProduct(target.getAttribute('data-buy-product'), count)    
+            } else {
+                const radioValue = document.querySelector('input[name="product-radio"]:checked').value
+                addCartProduct(target.getAttribute('data-buy-product'), count, 'radioValue', radioValue)
+            }
             showCardCounter(attr)
             setTimeout(renderCartCards, 10)
+            
         }
 
         // если клик по кнопке купить в карточках товаров
         if (target.classList.contains('add-cart__btn')) {
-
-            // скрыть кнопку купить
-            //hideElem(target)
 
             // раскрыть счетчик количества товара
             showCardCounter(attr)
@@ -87,4 +93,28 @@ document.addEventListener('click', e => {
             setTimeout(renderCartCards, 10)
         }
     }
+    
+    if (target.closest('.cart-card .product__radio') && target.getAttribute('for')) {
+        const localCart = JSON.parse(localStorage.getItem('cart'))
+        setTimeout(() => {
+            const parent = target.closest('.cart-card')
+            const attr = parent.getAttribute('data-card')
+            const radioSizeValue = parent.querySelector(`input[name="card-${attr}-product-radio"]:checked`).value
+            console.log(radioSizeValue)
+            
+            const newLocalCart = localCart
+            newLocalCart[attr].radioValue = radioSizeValue
+
+            localStorage.setItem('cart', JSON.stringify(newLocalCart))
+
+            renderCartCards()
+        })
+    }
+
+    if (target.closest('.product__radio')) {
+        calculateProductPopupPrice()
+    }
 })
+
+
+
